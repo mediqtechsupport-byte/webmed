@@ -1,0 +1,1827 @@
+<section id="about" aria-labelledby="about-title" class="page-snap-section page-transition-section relative isolate w-full h-[100svh] min-h-[100svh] max-h-[100svh] overflow-hidden bg-[#0a1d40] scroll-mt-0">
+
+      <style id="about-editorial-scoped-styles">
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500&display=swap');
+
+        #about .abt-serif {
+          font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+        }
+        #about .abt-eyebrow {
+          font-family: var(--font-sans, "Manrope", sans-serif);
+          font-size: 11.5px;
+          font-weight: 600;
+          letter-spacing: 0.24em;
+          text-transform: uppercase;
+          color: #679cd0;
+        }
+        #about .abt-hairline-t {
+          border-top: 1px solid rgba(114, 197, 248, 0.14);
+        }
+        #about .abt-hairline-b {
+          border-bottom: 1px solid rgba(114, 197, 248, 0.14);
+        }
+        #about .abt-hairline-r {
+          border-right: 1px solid rgba(114, 197, 248, 0.14);
+        }
+        #about .abt-body {
+          color: #9bb3cf;
+          font-size: clamp(15.5px, 1.12vw, 17.5px);
+          line-height: 1.78;
+        }
+        #about .abt-grid-overlay {
+          background-image:
+            linear-gradient(rgba(114, 197, 248, 0.028) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(114, 197, 248, 0.028) 1px, transparent 1px);
+          background-size: 32px 32px;
+        }
+        #about-subpage-scroll {
+          scrollbar-width: thin;
+          scrollbar-color: rgba(114, 197, 248, 0.28) rgba(10, 29, 64, 0.5);
+        }
+        #about-subpage-scroll::-webkit-scrollbar {
+          width: 6px;
+        }
+        #about-subpage-scroll::-webkit-scrollbar-track {
+          background: rgba(10, 29, 64, 0.5);
+        }
+        #about-subpage-scroll::-webkit-scrollbar-thumb {
+          background: rgba(114, 197, 248, 0.28);
+          border-radius: 999px;
+        }
+        @keyframes abtEyeBreathe {
+          0%, 100% { transform: scale(1); opacity: 0.78; }
+          50% { transform: scale(1.03); opacity: 1; }
+        }
+        #about .abt-eye-emblem {
+          animation: abtEyeBreathe 6.5s ease-in-out infinite;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          #about .abt-eye-emblem { animation: none !important; }
+        }
+
+        /* Unified Animated Bottom Marquee Strip & Anti-Overlap Sub-Page Layout */
+        @keyframes abtTickerScroll {
+          0% { transform: translate3d(0, 0, 0); }
+          100% { transform: translate3d(-50%, 0, 0); }
+        }
+        #about .abt-ticker-strip {
+          font-family: 'Plus Jakarta Sans', 'Inter', var(--font-sans, 'Manrope'), -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        #about .abt-ticker-track {
+          display: flex;
+          width: max-content;
+          will-change: transform;
+          animation: abtTickerScroll 34s linear infinite;
+        }
+        #about .abt-subpage-panel.is-hidden-subpage {
+          display: none !important;
+        }
+        #about .abt-subpage-shell {
+          padding-top: clamp(1.25rem, 2.4vh, 2.25rem);
+          padding-bottom: clamp(1.25rem, 2.4vh, 2.25rem);
+        }
+        #about .abt-forge-media-box {
+          width: min(240px, 32svh);
+          aspect-ratio: 1 / 1;
+        }
+        @media (min-width: 640px) {
+          #about .abt-forge-media-box {
+            width: min(310px, 36svh);
+          }
+        }
+        @media (min-width: 1024px) {
+          #about .abt-forge-media-box {
+            width: min(410px, calc(100svh - 224px));
+          }
+        }
+        @media (min-width: 1280px) {
+          #about .abt-forge-media-box {
+            width: min(436px, calc(100svh - 224px));
+          }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          #about .abt-ticker-track {
+            animation: none !important;
+            transform: none !important;
+          }
+        }
+
+        /* Forge Automotive (forgeautomotive.co.uk) 01/03 Pinned Showcase Styles */
+        #about .forge-specular-btn {
+          position: relative;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 1.05rem 2.35rem;
+          background: rgba(10, 29, 64, 0.72);
+          backdrop-filter: blur(14px);
+          -webkit-backdrop-filter: blur(14px);
+          border: 1px solid rgba(114, 197, 248, 0.20);
+          color: #f4f7fb;
+          font-family: var(--font-sans, "Manrope", sans-serif);
+          font-size: 10.5px;
+          font-weight: 700;
+          letter-spacing: 0.24em;
+          text-transform: uppercase;
+          transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+          cursor: pointer;
+        }
+        #about .forge-specular-btn::before,
+        #about .forge-specular-btn::after {
+          content: "";
+          position: absolute;
+          left: 18%;
+          right: 18%;
+          height: 1.5px;
+          background: radial-gradient(closest-side, #ffffff 0%, #72c5f8 45%, transparent 100%);
+          opacity: 0.9;
+          transition: left 0.35s ease, right 0.35s ease, opacity 0.35s ease;
+          pointer-events: none;
+        }
+        #about .forge-specular-btn::before {
+          top: -1px;
+        }
+        #about .forge-specular-btn::after {
+          bottom: -1px;
+        }
+        #about .forge-specular-btn:hover {
+          background: rgba(58, 160, 219, 0.16);
+          border-color: rgba(114, 197, 248, 0.45);
+          transform: translateY(-2px);
+        }
+        #about .forge-specular-btn:hover::before,
+        #about .forge-specular-btn:hover::after {
+          left: 8%;
+          right: 8%;
+          opacity: 1;
+        }
+        #about .forge-panels-stack {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr);
+          align-items: center;
+          position: relative;
+          width: 100%;
+        }
+        #about .forge-text-panel {
+          grid-column: 1 / -1;
+          grid-row: 1 / -1;
+          position: relative !important;
+          top: auto !important;
+          bottom: auto !important;
+          left: auto !important;
+          right: auto !important;
+          width: 100%;
+          transition: opacity 0.52s cubic-bezier(0.22, 1, 0.36, 1), transform 0.52s cubic-bezier(0.22, 1, 0.36, 1), filter 0.52s ease;
+        }
+        #about .forge-text-panel.is-active {
+          opacity: 1 !important;
+          transform: translate3d(0, 0, 0) !important;
+          pointer-events: auto !important;
+          z-index: 2;
+        }
+        #about .forge-text-panel.is-above {
+          opacity: 0 !important;
+          transform: translate3d(0, -24px, 0) !important;
+          pointer-events: none !important;
+          z-index: 1;
+        }
+        #about .forge-text-panel.is-below {
+          opacity: 0 !important;
+          transform: translate3d(0, 24px, 0) !important;
+          pointer-events: none !important;
+          z-index: 1;
+        }
+        #about .forge-service-row {
+          position: relative;
+          overflow: hidden;
+        }
+        #about .forge-service-row::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          height: 1.5px;
+          background: linear-gradient(90deg, #72c5f8 0%, #ffffff 50%, rgba(114, 197, 248, 0.15) 100%);
+          transform: scaleX(0);
+          transform-origin: left center;
+          transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+          pointer-events: none;
+        }
+        #about .forge-service-row:hover::after,
+        #about .forge-service-row.is-active::after {
+          transform: scaleX(1);
+        }
+      </style>
+
+      <!-- Persistent Fixed Full-Viewport Dark Navy Background with Two-Layer Smoke Canvas (Puff + Tendril) -->
+      <div class="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-[#0a1d40]">
+        <!-- 1. Silk Waves Shader Background (Full on Slide 0 Purpose, softened on Scrollable Subpage) -->
+        <canvas id="about-waves-shader-canvas" class="pointer-events-none absolute inset-0 z-0 block size-full opacity-55 transition-opacity duration-500" aria-hidden="true"></canvas>
+
+        <!-- 2. Two-Layer HTML5 Canvas Smoke Animation (14 Radial Puffs + 18 Sine-Swaying Tendrils) -->
+        <canvas id="about-smoke-canvas" class="pointer-events-none absolute inset-0 z-[1] block size-full opacity-95" aria-hidden="true"></canvas>
+
+        <!-- 3. Subtle Fine Architectural Grid Texture matching Reference Design -->
+        <div class="abt-grid-overlay pointer-events-none absolute inset-0 z-[2]"></div>
+
+        <div class="absolute -left-24 top-1/4 h-[38rem] w-[38rem] rounded-full bg-sky/10 blur-[170px]"></div>
+        <div class="absolute right-0 top-1/3 h-[42rem] w-[42rem] rounded-full bg-[#0a1d40]/35 blur-[190px]"></div>
+      </div>
+
+      <!-- Hidden Deck Nav Compatibility Hook -->
+      <div id="about-deck-nav" class="hidden" aria-hidden="true">
+        <button type="button" id="about-deck-prev" aria-label="Previous Slide"></button>
+        <button type="button" id="about-deck-next" aria-label="Next Slide"></button>
+      </div>
+
+      <!-- Main Views Container (Slide 0 = Landing Purpose Page, Slide 1 = Single Scrollable Subpage) -->
+      <div class="relative w-full h-full overflow-hidden">
+
+        <!-- ========================================================================= -->
+        <!-- SLIDE 0: LANDING VIEW — OUR PURPOSE (Philippines Map & Explore Button)    -->
+        <!-- ========================================================================= -->
+        <div class="about-slide absolute inset-0 w-full h-full flex items-center overflow-y-auto lg:overflow-hidden transition-all duration-500 ease-out opacity-100 pointer-events-auto translate-x-0 z-10" data-index="0">
+
+          <!-- Full-Bleed Panoramic World Route Blueprint Map across Background -->
+          <div id="about-interactive-stage" class="absolute inset-0 w-full h-full pointer-events-auto z-[2] overflow-hidden">
+            <div class="absolute inset-0 bg-radial from-sky/15 via-[#0a1d40]/20 to-transparent rounded-full blur-3xl transform scale-125 pointer-events-none -z-10"></div>
+          </div>
+
+          <div class="ih-shell relative z-10 w-full pointer-events-none">
+            <div class="ih-hero">
+
+              <!-- Left Copy Column -->
+              <div class="ih-hero-copy pointer-events-auto max-w-2xl relative z-20">
+
+                <!-- Eyebrow Tag -->
+                <p class="ih-eyebrow">
+                  <span>ABOUT MEDIQ &nbsp;&bull;&nbsp; OUR PURPOSE</span>
+                  <span class="inline-block h-0.5 bg-sky/50 w-12 ml-1"></span>
+                </p>
+
+                <!-- Main Headline -->
+                <h2 id="about-title" class="ih-h1">
+                  <span class="ih-h1-line">Connecting Global</span>
+                  <span class="ih-h1-line">Healthcare Innovation</span>
+                  <span class="ih-h1-line">with the Philippines</span>
+                </h2>
+
+                <!-- Lede Description -->
+                <p class="ih-lede">
+                  Connecting global healthcare innovation with Philippine institutions through responsible product marketing, commercial execution, quality service, and nationwide distribution.
+                </p>
+
+                <!-- Action Button: Opens Single Scrollable Subpage (Slide 1) -->
+                <div class="mt-8">
+                  <button type="button" onclick="if(window.goToAboutSlide){window.goToAboutSlide(1);}" class="about-go-next inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-sky text-[#0a1d40] text-sm font-bold tracking-wide shadow-[0_0_25px_rgba(58,160,219,0.35)] hover:bg-[#72c5f8] hover:scale-105 active:scale-95 transition-all cursor-pointer">
+                    <span>Explore Profile &amp; Mission</span>
+                    <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+                  </button>
+                </div>
+
+              </div>
+
+              <!-- Right Column: Expansive Open Space for the Panoramic Global Map -->
+              <div class="hidden lg:block pointer-events-none"></div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ========================================================================= -->
+        <!-- SLIDE 1: SINGLE UNIFIED SCROLLABLE SUBPAGE                                -->
+        <!-- (Vision & Mission + Who We Are -> What We Do -> Foundation -> Core Values) -->
+        <!-- ========================================================================= -->
+        <div class="about-slide absolute inset-x-0 top-20 bottom-0 w-full flex flex-col overflow-hidden text-cream transition-all duration-500 ease-out opacity-0 pointer-events-none translate-x-12 z-0" data-index="1">
+
+          <!-- Attached Sub-Navbar: Flush with Main Header (h-20 / top-20), Unified Architectural Format -->
+          <div class="mediq-subnavbar shrink-0 z-40 w-full">
+            <nav aria-label="About MEDIQ Subsections" class="mediq-subnavbar__inner">
+              <button type="button" onclick="if(window.goToAboutSlide){window.goToAboutSlide(0);}" class="mediq-subnavbar__overview">
+                Overview
+              </button>
+              <button type="button" data-about-jump="about-sec-who-we-are" onclick="if(window.goToAboutSlide){window.goToAboutSlide(1);}" class="mediq-subnavbar__tab abt-subnav-pill is-active">
+                Who We Are &amp; Mission
+              </button>
+              <span class="mediq-subnavbar__sep" aria-hidden="true"></span>
+              <button type="button" data-about-jump="about-slide-what-we-do" onclick="if(window.goToAboutSlide){window.goToAboutSlide(2);}" class="mediq-subnavbar__tab abt-subnav-pill">
+                What We Do
+              </button>
+              <span class="mediq-subnavbar__sep" aria-hidden="true"></span>
+              <button type="button" data-about-jump="about-sec-foundation" onclick="if(window.goToAboutSlide){window.goToAboutSlide(3);}" class="mediq-subnavbar__tab abt-subnav-pill">
+                Our Foundation
+              </button>
+              <span class="mediq-subnavbar__sep" aria-hidden="true"></span>
+              <button type="button" data-about-jump="about-sec-values" onclick="if(window.goToAboutSlide){window.goToAboutSlide(4);}" class="mediq-subnavbar__tab abt-subnav-pill">
+                Core Values
+              </button>
+            </nav>
+          </div>
+
+          <!-- Dedicated Scroll Viewport Below Attached Sub-Navbar -->
+          <div id="about-subpage-scroll" class="relative flex-1 w-full overflow-y-auto overflow-x-hidden scroll-smooth">
+
+          <!-- ===================================================================== -->
+          <!-- SECTION 1: EDITORIAL INTRO + VISION & MISSION                         -->
+          <!-- ===================================================================== -->
+          <div id="about-sec-who-we-are" class="abt-subpage-panel relative z-10 w-full abt-hairline-b">
+
+            <!-- Centered Subpage Hero Banner (MEDIQ Pharma and Medical Supplies Distribution · Advancing Healthcare. Empowering Better Lives.) -->
+            <div class="relative isolate abt-hairline-b min-h-[calc(100svh-128px)] flex flex-col justify-between overflow-hidden">
+              <div class="flex-1 flex flex-col items-center justify-center text-center px-6 sm:px-10 lg:px-16 py-10 sm:py-14">
+                <p class="abt-eyebrow mb-5 sm:mb-7">MEDIQ PHARMA AND MEDICAL SUPPLIES DISTRIBUTION</p>
+
+                <h2 class="abt-serif text-[40px] sm:text-[60px] lg:text-[72px] font-bold text-[#f4f7fb] tracking-[-0.02em] leading-[1.08] max-w-4xl">
+                  <span class="block">Advancing Healthcare.</span>
+                  <span class="block mt-1"><em class="italic font-medium text-[#6fa4d8]">Empowering</em> Better Lives.</span>
+                </h2>
+
+                <p class="abt-body mt-6 sm:mt-8 max-w-[720px] text-center">
+                  <strong class="font-semibold text-[#f4f7fb]">MEDIQ Pharma and Medical Supplies Distribution.</strong> Supporting Philippine healthcare professionals and institutions through responsible medical product distribution, product marketing, and commercial development &mdash; anchored by established expertise in ophthalmic technologies.
+                </p>
+
+                <button type="button" onclick="const el=document.getElementById('about-vision-mission-block');const sc=document.getElementById('about-subpage-scroll');if(el&&sc){sc.scrollTo({top:Math.max(0,el.offsetTop),behavior:'smooth'});}" class="mt-10 sm:mt-14 inline-flex flex-col items-center gap-2.5 text-[#7aaee0] hover:text-white transition-colors cursor-pointer group">
+                  <span class="text-[12.5px] font-medium tracking-[0.06em]">Scroll to explore</span>
+                  <svg class="size-4 text-[#679cd0] group-hover:translate-y-1 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+                </button>
+              </div>
+
+              <!-- Bottom Full-Width Subtle Marquee Ticker -->
+              <div class="abt-ticker-strip relative z-10 shrink-0 w-full border-t border-[#5eb2f6]/14 bg-[#041026]/35 py-3.5 overflow-hidden select-none">
+                <div class="abt-ticker-track items-center text-[12.5px] sm:text-[13.5px] font-bold uppercase tracking-[0.14em] text-[#5d82aa]/55">
+                  <div class="flex items-center gap-7 sm:gap-9 pr-7 sm:pr-9">
+                    <span class="whitespace-nowrap">ADVANCING HEALTHCARE</span>
+                    <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                    <span class="whitespace-nowrap">EMPOWERING BETTER LIVES</span>
+                    <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                    <span class="whitespace-nowrap">OPHTHALMIC EXPERTISE</span>
+                    <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                    <span class="whitespace-nowrap">NATIONWIDE DISTRIBUTION</span>
+                    <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                    <span class="whitespace-nowrap">TRUSTED PARTNERSHIPS</span>
+                    <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                    <span class="whitespace-nowrap">ADVANCING HEALTHCARE</span>
+                    <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                    <span class="whitespace-nowrap">EMPOWERING BETTER LIVES</span>
+                    <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                    <span class="whitespace-nowrap">OPHTHALMIC EXPERTISE</span>
+                    <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                    <span class="whitespace-nowrap">NATIONWIDE DISTRIBUTION</span>
+                    <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                    <span class="whitespace-nowrap">TRUSTED PARTNERSHIPS</span>
+                    <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  </div>
+                  <div class="flex items-center gap-7 sm:gap-9 pr-7 sm:pr-9" aria-hidden="true">
+                    <span class="whitespace-nowrap">ADVANCING HEALTHCARE</span>
+                    <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                    <span class="whitespace-nowrap">EMPOWERING BETTER LIVES</span>
+                    <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                    <span class="whitespace-nowrap">OPHTHALMIC EXPERTISE</span>
+                    <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                    <span class="whitespace-nowrap">NATIONWIDE DISTRIBUTION</span>
+                    <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                    <span class="whitespace-nowrap">TRUSTED PARTNERSHIPS</span>
+                    <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                    <span class="whitespace-nowrap">ADVANCING HEALTHCARE</span>
+                    <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                    <span class="whitespace-nowrap">EMPOWERING BETTER LIVES</span>
+                    <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                    <span class="whitespace-nowrap">OPHTHALMIC EXPERTISE</span>
+                    <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                    <span class="whitespace-nowrap">NATIONWIDE DISTRIBUTION</span>
+                    <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                    <span class="whitespace-nowrap">TRUSTED PARTNERSHIPS</span>
+                    <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ===================================================================== -->
+            <!-- FORGE AUTOMOTIVE (01 / 03) PINNED SCROLL SHOWCASE:                    -->
+            <!-- 01 / 03 Who We Are · 02 / 03 Our Mission · 03 / 03 Our Vision         -->
+            <!-- ===================================================================== -->
+            <div id="about-vision-mission-block" class="relative isolate w-full h-[300vh]">
+
+              <!-- Sticky Full-Viewport Stage -->
+              <div id="forge-about-sticky" class="sticky top-0 w-full h-[calc(100svh-128px)] overflow-hidden flex flex-col justify-between">
+
+                <!-- 1. Full-Bleed Blurred Studio Backdrop of the Active Side Video -->
+                <div class="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-[#0c0e12]">
+                  <!-- BG 01: Who We Are -->
+                  <div data-forge-bg="0" class="absolute inset-0 bg-cover bg-center scale-[1.15] blur-[24px] brightness-[0.55] saturate-[1.05] opacity-100 transition-opacity duration-700 ease-out" style="background-image: url('assets/img/pillars/about_who_video_poster.jpg');"></div>
+                  <!-- BG 02: Our Mission -->
+                  <div data-forge-bg="1" class="absolute inset-0 bg-cover bg-center scale-[1.15] blur-[24px] brightness-[0.55] saturate-[1.05] opacity-0 transition-opacity duration-700 ease-out" style="background-image: url('assets/img/pillars/about_mission_video_poster.jpg');"></div>
+                  <!-- BG 03: Our Vision -->
+                  <div data-forge-bg="2" class="absolute inset-0 bg-cover bg-center scale-[1.15] blur-[24px] brightness-[0.55] saturate-[1.05] opacity-0 transition-opacity duration-700 ease-out" style="background-image: url('assets/img/pillars/about_vision_video_poster.jpg');"></div>
+                  <!-- Subtle neutral dark studio vignette for crisp white text legibility -->
+                  <div class="absolute inset-0 bg-black/35"></div>
+                  <div class="absolute inset-0 bg-[radial-gradient(circle_at_35%_50%,transparent_20%,rgba(0,0,0,0.55)_100%)]"></div>
+                </div>
+
+                <!-- 2. Main Centered Two-Column Forge Stage (Sharp Left Square Frame + Right Editorial Narrative) -->
+                <div class="relative z-10 flex-1 min-h-0 flex items-center mx-auto w-full max-w-[1240px] px-6 sm:px-10 lg:px-16 py-4">
+                  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-14 xl:gap-16 items-center w-full">
+
+                    <!-- Left Column: Sharp Square Video Frame with Scroll-Scrubbed Clip-Path Curtain Wipe -->
+                    <div class="lg:col-span-5 flex items-center justify-center lg:justify-end">
+                      <div class="abt-forge-media-box relative overflow-hidden bg-[#0a1d40] border border-white/15 shadow-[0_32px_90px_rgba(2,8,22,0.85)] select-none">
+
+                        <!-- Layer 01: Who We Are -->
+                        <div data-forge-img-wrap="0" class="absolute inset-0 w-full h-full overflow-hidden z-[1]" style="clip-path: inset(0% 0 0 0);">
+                          <video data-forge-img="0" src="assets/video/about-who-we-are.mp4" poster="assets/img/pillars/about_who_video_poster.jpg" autoplay loop muted playsinline preload="auto" aria-label="Who We Are — Healthcare Distribution &amp; Commercial Development" class="w-full h-full object-cover object-center will-change-transform pointer-events-none" style="transform: scale(1.04);"></video>
+                        </div>
+
+                        <!-- Layer 02: Our Mission (Curtain wipes upward over Layer 01) -->
+                        <div data-forge-img-wrap="1" class="absolute inset-0 w-full h-full overflow-hidden z-[2]" style="clip-path: inset(100% 0 0 0);">
+                          <video data-forge-img="1" src="assets/video/about-our-mission.mp4" poster="assets/img/pillars/about_mission_video_poster.jpg" autoplay loop muted playsinline preload="auto" aria-label="Our Mission — Bridging Global Healthcare Innovation" class="w-full h-full object-cover object-center will-change-transform pointer-events-none" style="transform: scale(1.16);"></video>
+                        </div>
+
+                        <!-- Layer 03: Our Vision (Curtain wipes upward over Layer 02) -->
+                        <div data-forge-img-wrap="2" class="absolute inset-0 w-full h-full overflow-hidden z-[3]" style="clip-path: inset(100% 0 0 0);">
+                          <video data-forge-img="2" src="assets/video/about-our-vision.mp4" poster="assets/img/pillars/about_vision_video_poster.jpg" autoplay loop muted playsinline preload="auto" aria-label="Our Vision — Trusted Healthcare Solutions Partner" class="w-full h-full object-cover object-center will-change-transform pointer-events-none" style="transform: scale(1.16);"></video>
+                        </div>
+
+                        <!-- Minimalist Scroll Down Cue Inside Image Frame -->
+                        <div class="pointer-events-none absolute inset-x-0 bottom-0 h-24 z-[9] bg-gradient-to-t from-black/65 via-black/20 to-transparent"></div>
+                        <button type="button" onclick="window.jumpForgeAboutStage && window.jumpForgeAboutStage(((window.__forgeAbtActiveStage || 0) + 1) % 3)" class="absolute bottom-4 left-1/2 -translate-x-1/2 z-[10] inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-black/35 backdrop-blur-md border border-white/20 text-[9.5px] font-medium uppercase tracking-[0.26em] text-white/90 hover:text-white hover:border-white/40 transition-all cursor-pointer group">
+                          <span>Scroll down</span>
+                          <svg class="size-3 text-white/80 group-hover:translate-y-0.5 transition-transform animate-bounce" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M8 3v10M4.5 9.5 8 13l3.5-3.5" />
+                          </svg>
+                        </button>
+
+                      </div>
+                    </div>
+
+                    <!-- Right Column: Animated Stage Typography -->
+                    <div class="lg:col-span-7 flex flex-col justify-center min-h-0 lg:pl-4">
+
+                      <!-- Middle: Overlapping Stage Text Panels (01 Who We Are, 02 Our Mission, 03 Our Vision) in Dedicated Grid Stack -->
+                      <div class="forge-panels-stack my-2 lg:my-4">
+
+                        <!-- STAGE 01 / 03: WHO WE ARE (First) -->
+                        <div data-forge-panel="0" class="forge-text-panel is-active">
+                          <h2 class="abt-serif text-[32px] sm:text-[44px] lg:text-[52px] font-normal text-white tracking-[-0.02em] leading-[1.06] mb-3.5 sm:mb-4">
+                            Who We <em class="italic text-[#72c5f8]">Are</em>
+                          </h2>
+                          <p class="text-[14px] sm:text-[15.5px] text-white/85 leading-[1.65] max-w-[560px] mb-3.5">
+                            MEDIQ, operating as <strong class="font-semibold text-white">Mediq Pharma and Medical Supplies Distribution</strong>, is a Philippine-based healthcare distribution and commercial development company connecting international medical manufacturers with healthcare professionals, hospitals, surgical centers, and institutions across the country.
+                          </p>
+                          <p class="text-[14px] sm:text-[15.5px] text-white/80 leading-[1.65] max-w-[560px] mb-5">
+                            Established in specialized ophthalmic technologies, MEDIQ aims to build a diversified healthcare portfolio while retaining its commitment to product quality, technical understanding, responsive service, and sustainable partnerships.
+                          </p>
+                          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 pt-3.5 border-t border-white/15 max-w-[560px]">
+                            <div class="flex items-center gap-3 text-[13px] text-white/80"><span class="grid place-items-center size-7 rounded-lg border border-[#72c5f8]/30 bg-[#72c5f8]/10 text-[#72c5f8] shrink-0 shadow-[0_0_14px_rgba(114,197,248,0.18)]"><svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span><span>Commitment to product quality</span></div>
+                            <div class="flex items-center gap-3 text-[13px] text-white/80"><span class="grid place-items-center size-7 rounded-lg border border-[#72c5f8]/30 bg-[#72c5f8]/10 text-[#72c5f8] shrink-0 shadow-[0_0_14px_rgba(114,197,248,0.18)]"><svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg></span><span>Technical product understanding</span></div>
+                            <div class="flex items-center gap-3 text-[13px] text-white/80"><span class="grid place-items-center size-7 rounded-lg border border-[#72c5f8]/30 bg-[#72c5f8]/10 text-[#72c5f8] shrink-0 shadow-[0_0_14px_rgba(114,197,248,0.18)]"><svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z"/><path d="M21 16v2a4 4 0 0 1-4 4h-5"/></svg></span><span>Responsive institutional service</span></div>
+                            <div class="flex items-center gap-3 text-[13px] text-white/80"><span class="grid place-items-center size-7 rounded-lg border border-[#72c5f8]/30 bg-[#72c5f8]/10 text-[#72c5f8] shrink-0 shadow-[0_0_14px_rgba(114,197,248,0.18)]"><svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg></span><span>Sustainable healthcare partnerships</span></div>
+                          </div>
+                        </div>
+
+                        <!-- STAGE 02 / 03: OUR MISSION (Second) -->
+                        <div data-forge-panel="1" class="forge-text-panel is-below">
+                          <h2 class="abt-serif text-[32px] sm:text-[44px] lg:text-[52px] font-normal text-white tracking-[-0.02em] leading-[1.06] mb-4 sm:mb-5">
+                            Our Mission
+                          </h2>
+                          <p class="text-[14.5px] sm:text-[16px] text-white/85 leading-[1.68] max-w-[560px] mb-6">
+                            To bridge global healthcare innovation with the evolving needs of the Philippine market by sourcing, marketing, promoting, selling, and distributing quality medical products and technologies, while providing healthcare professionals with reliable support, education, and service.
+                          </p>
+                          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 pt-4 border-t border-white/15 max-w-[560px]">
+                            <div class="flex items-center gap-3 text-[13px] text-white/80"><span class="grid place-items-center size-7 rounded-lg border border-[#72c5f8]/30 bg-[#72c5f8]/10 text-[#72c5f8] shrink-0 shadow-[0_0_14px_rgba(114,197,248,0.18)]"><svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"/><path d="m7.5 4.27 9 5.15"/></svg></span><span>Sourcing &amp; quality distribution</span></div>
+                            <div class="flex items-center gap-3 text-[13px] text-white/80"><span class="grid place-items-center size-7 rounded-lg border border-[#72c5f8]/30 bg-[#72c5f8]/10 text-[#72c5f8] shrink-0 shadow-[0_0_14px_rgba(114,197,248,0.18)]"><svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span><span>Product marketing &amp; promotion</span></div>
+                            <div class="flex items-center gap-3 text-[13px] text-white/80"><span class="grid place-items-center size-7 rounded-lg border border-[#72c5f8]/30 bg-[#72c5f8]/10 text-[#72c5f8] shrink-0 shadow-[0_0_14px_rgba(114,197,248,0.18)]"><svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span><span>Commercial sales execution</span></div>
+                            <div class="flex items-center gap-3 text-[13px] text-white/80"><span class="grid place-items-center size-7 rounded-lg border border-[#72c5f8]/30 bg-[#72c5f8]/10 text-[#72c5f8] shrink-0 shadow-[0_0_14px_rgba(114,197,248,0.18)]"><svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></span><span>Professional support, education &amp; service</span></div>
+                          </div>
+                        </div>
+
+                        <!-- STAGE 03 / 03: OUR VISION (Third / Last) -->
+                        <div data-forge-panel="2" class="forge-text-panel is-below">
+                          <h2 class="abt-serif text-[32px] sm:text-[44px] lg:text-[52px] font-normal text-white tracking-[-0.02em] leading-[1.06] mb-4 sm:mb-5">
+                            Our Vision
+                          </h2>
+                          <p class="text-[14.5px] sm:text-[16px] text-white/85 leading-[1.68] max-w-[560px] mb-6">
+                            To become one of the Philippines&rsquo; most trusted and forward-thinking healthcare solutions partners, advancing the accessibility, quality, and delivery of care through innovative products, responsible commercialization, and enduring partnerships.
+                          </p>
+                          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 pt-4 border-t border-white/15 max-w-[560px]">
+                            <div class="flex items-center gap-3 text-[13px] text-white/80"><span class="grid place-items-center size-7 rounded-lg border border-[#72c5f8]/30 bg-[#72c5f8]/10 text-[#72c5f8] shrink-0 shadow-[0_0_14px_rgba(114,197,248,0.18)]"><svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M12 16s-3-1.8-3-4a1.6 1.6 0 0 1 3-.8 1.6 1.6 0 0 1 3 .8c0 2.2-3 4-3 4z"/></svg></span><span>Trusted healthcare solutions partner</span></div>
+                            <div class="flex items-center gap-3 text-[13px] text-white/80"><span class="grid place-items-center size-7 rounded-lg border border-[#72c5f8]/30 bg-[#72c5f8]/10 text-[#72c5f8] shrink-0 shadow-[0_0_14px_rgba(114,197,248,0.18)]"><svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 2v2"/><path d="M5 2v2"/><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/></svg></span><span>Advancing accessibility &amp; quality of care</span></div>
+                            <div class="flex items-center gap-3 text-[13px] text-white/80"><span class="grid place-items-center size-7 rounded-lg border border-[#72c5f8]/30 bg-[#72c5f8]/10 text-[#72c5f8] shrink-0 shadow-[0_0_14px_rgba(114,197,248,0.18)]"><svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></span><span>Innovative products &amp; commercialization</span></div>
+                            <div class="flex items-center gap-3 text-[13px] text-white/80"><span class="grid place-items-center size-7 rounded-lg border border-[#72c5f8]/30 bg-[#72c5f8]/10 text-[#72c5f8] shrink-0 shadow-[0_0_14px_rgba(114,197,248,0.18)]"><svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6v4"/><path d="M14 14h-4"/><path d="M14 18h-4"/><path d="M14 8h-4"/><path d="M18 12h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2h2"/><path d="M18 22V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v18"/></svg></span><span>Enduring institutional partnerships</span></div>
+                          </div>
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+
+                <!-- 3. Bottom Full-Width Subtle Marquee Ticker -->
+                <div class="abt-ticker-strip relative z-20 shrink-0 w-full border-t border-[#5eb2f6]/14 bg-[#041026]/55 backdrop-blur-sm py-3.5 overflow-hidden select-none">
+                  <div class="abt-ticker-track items-center text-[12.5px] sm:text-[13.5px] font-bold uppercase tracking-[0.14em] text-[#5d82aa]/55">
+                    <div class="flex items-center gap-7 sm:gap-9 pr-7 sm:pr-9">
+                      <span class="whitespace-nowrap">WHO WE ARE</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">OUR MISSION</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">OUR VISION</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">PHILIPPINE HEALTHCARE</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">RESPONSIBLE COMMERCIALIZATION</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">WHO WE ARE</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">OUR MISSION</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">OUR VISION</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">PHILIPPINE HEALTHCARE</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">RESPONSIBLE COMMERCIALIZATION</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                    </div>
+                    <div class="flex items-center gap-7 sm:gap-9 pr-7 sm:pr-9" aria-hidden="true">
+                      <span class="whitespace-nowrap">WHO WE ARE</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">OUR MISSION</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">OUR VISION</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">PHILIPPINE HEALTHCARE</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">RESPONSIBLE COMMERCIALIZATION</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">WHO WE ARE</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">OUR MISSION</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">OUR VISION</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">PHILIPPINE HEALTHCARE</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">RESPONSIBLE COMMERCIALIZATION</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+          <!-- ===================================================================== -->
+          <!-- SECTION 2: WHAT WE DO (Forge Automotive Services Showcase 01 / 06)    -->
+          <!-- ===================================================================== -->
+          <div id="about-slide-what-we-do" class="abt-subpage-panel is-hidden-subpage wwd-entered opacity-100 relative z-10 w-full abt-hairline-b">
+
+            <!-- ===================================================================== -->
+            <!-- FORGE AUTOMOTIVE SERVICES (01 / 06) PINNED SCROLL-SCRUB SHOWCASE      -->
+            <!-- ===================================================================== -->
+            <div id="wwd-forge-services-block" class="relative isolate w-full h-[480vh]">
+
+              <!-- Sticky Full-Viewport Services Atelier Stage -->
+              <div id="wwd-forge-sticky" class="sticky top-0 w-full h-[calc(100svh-128px)] overflow-hidden flex flex-col justify-between">
+
+                <!-- 1. Full-Bleed Blurred Studio Backdrop of the Active Side Video -->
+                <div class="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-[#0c0e12]">
+                  <div data-wwd-forge-bg="0" class="absolute inset-0 bg-cover bg-center scale-[1.15] blur-[24px] brightness-[0.55] saturate-[1.05] opacity-100 transition-opacity duration-700 ease-out" style="background-image: url('assets/img/pillars/wwd_01_video_poster.jpg');"></div>
+                  <div data-wwd-forge-bg="1" class="absolute inset-0 bg-cover bg-center scale-[1.15] blur-[24px] brightness-[0.55] saturate-[1.05] opacity-0 transition-opacity duration-700 ease-out" style="background-image: url('assets/img/pillars/wwd_02_video_poster.jpg');"></div>
+                  <div data-wwd-forge-bg="2" class="absolute inset-0 bg-cover bg-center scale-[1.15] blur-[24px] brightness-[0.55] saturate-[1.05] opacity-0 transition-opacity duration-700 ease-out" style="background-image: url('assets/img/pillars/wwd_03_video_poster.jpg');"></div>
+                  <div data-wwd-forge-bg="3" class="absolute inset-0 bg-cover bg-center scale-[1.15] blur-[24px] brightness-[0.55] saturate-[1.05] opacity-0 transition-opacity duration-700 ease-out" style="background-image: url('assets/img/pillars/wwd_04_video_poster.jpg');"></div>
+                  <div data-wwd-forge-bg="4" class="absolute inset-0 bg-cover bg-center scale-[1.15] blur-[24px] brightness-[0.55] saturate-[1.05] opacity-0 transition-opacity duration-700 ease-out" style="background-image: url('assets/img/pillars/wwd_05_video_poster.jpg');"></div>
+                  <div data-wwd-forge-bg="5" class="absolute inset-0 bg-cover bg-center scale-[1.15] blur-[24px] brightness-[0.55] saturate-[1.05] opacity-0 transition-opacity duration-700 ease-out" style="background-image: url('assets/img/pillars/wwd_06_video_poster.jpg');"></div>
+                  <!-- Subtle neutral dark studio vignette for crisp white text legibility -->
+                  <div class="absolute inset-0 bg-black/35"></div>
+                  <div class="absolute inset-0 bg-[radial-gradient(circle_at_35%_50%,transparent_20%,rgba(0,0,0,0.55)_100%)]"></div>
+                </div>
+
+                <!-- 2. Center Split Layout: Sharp Framed Visual Left + 01/06 Service Stage Right -->
+                <div class="relative z-10 flex-1 min-h-0 flex items-center mx-auto w-full max-w-[1240px] px-6 sm:px-10 lg:px-16 py-4">
+                  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-14 xl:gap-16 items-center w-full">
+
+                    <!-- Left Column: Sharp Square Video Frame with Scroll-Scrubbed Clip-Path Curtain Wipes -->
+                    <div class="lg:col-span-5 flex items-center justify-center lg:justify-end">
+                      <div class="abt-forge-media-box relative overflow-hidden bg-[#0a1d40] border border-white/15 shadow-[0_32px_90px_rgba(2,8,22,0.85)] select-none">
+
+                        <!-- Layer 01: Supply Chain -->
+                        <div data-wwd-forge-wrap="0" class="absolute inset-0 w-full h-full overflow-hidden z-[1]" style="clip-path: inset(0% 0 0 0);">
+                          <video data-wwd-forge-img="0" src="assets/video/wwd-01-distribution.mp4" poster="assets/img/pillars/wwd_01_video_poster.jpg" autoplay loop muted playsinline preload="auto" aria-label="01 Strategic importation and distribution" class="w-full h-full object-cover object-center will-change-transform pointer-events-none" style="transform: scale(1.04);"></video>
+                        </div>
+
+                        <!-- Layer 02: Product Marketing & Brand Development -->
+                        <div data-wwd-forge-wrap="1" class="absolute inset-0 w-full h-full overflow-hidden z-[2]" style="clip-path: inset(100% 0 0 0);">
+                          <video data-wwd-forge-img="1" src="assets/video/wwd-02-marketing.mp4" poster="assets/img/pillars/wwd_02_video_poster.jpg" autoplay loop muted playsinline preload="auto" aria-label="02 Product Marketing &amp; Brand Development" class="w-full h-full object-cover object-center will-change-transform pointer-events-none" style="transform: scale(1.16);"></video>
+                        </div>
+
+                        <!-- Layer 03: Sales, Promotion & Commercialization -->
+                        <div data-wwd-forge-wrap="2" class="absolute inset-0 w-full h-full overflow-hidden z-[3]" style="clip-path: inset(100% 0 0 0);">
+                          <video data-wwd-forge-img="2" src="assets/video/wwd-03-sales.mp4" poster="assets/img/pillars/wwd_03_video_poster.jpg" autoplay loop muted playsinline preload="auto" aria-label="03 Sales, Promotion &amp; Commercialization" class="w-full h-full object-cover object-center will-change-transform pointer-events-none" style="transform: scale(1.16);"></video>
+                        </div>
+
+                        <!-- Layer 04: Quality & Customer Support -->
+                        <div data-wwd-forge-wrap="3" class="absolute inset-0 w-full h-full overflow-hidden z-[4]" style="clip-path: inset(100% 0 0 0);">
+                          <video data-wwd-forge-img="3" src="assets/video/wwd-04-quality.mp4" poster="assets/img/pillars/wwd_04_video_poster.jpg" autoplay loop muted playsinline preload="auto" aria-label="04 Quality &amp; Customer Support" class="w-full h-full object-cover object-center will-change-transform pointer-events-none" style="transform: scale(1.16);"></video>
+                        </div>
+
+                        <!-- Layer 05: Professional Education -->
+                        <div data-wwd-forge-wrap="4" class="absolute inset-0 w-full h-full overflow-hidden z-[5]" style="clip-path: inset(100% 0 0 0);">
+                          <video data-wwd-forge-img="4" src="assets/video/wwd-05-education.mp4" poster="assets/img/pillars/wwd_05_video_poster.jpg" autoplay loop muted playsinline preload="auto" aria-label="05 Professional Education" class="w-full h-full object-cover object-center will-change-transform pointer-events-none" style="transform: scale(1.16);"></video>
+                        </div>
+
+                        <!-- Layer 06: Performance, Feedback & Relationships -->
+                        <div data-wwd-forge-wrap="5" class="absolute inset-0 w-full h-full overflow-hidden z-[6]" style="clip-path: inset(100% 0 0 0);">
+                          <video data-wwd-forge-img="5" src="assets/video/wwd-06-relationships.mp4" poster="assets/img/pillars/wwd_06_video_poster.jpg" autoplay loop muted playsinline preload="auto" aria-label="06 Performance, Feedback &amp; Relationships" class="w-full h-full object-cover object-center will-change-transform pointer-events-none" style="transform: scale(1.16);"></video>
+                        </div>
+
+                        <!-- Minimalist Scroll Down Cue Inside Image Frame -->
+                        <div class="pointer-events-none absolute inset-x-0 bottom-0 h-24 z-[9] bg-gradient-to-t from-black/65 via-black/20 to-transparent"></div>
+                        <button type="button" onclick="window.jumpWwdForgeStage && window.jumpWwdForgeStage(((window.__wwdForgeActiveStage || 0) + 1) % 6)" class="absolute bottom-4 left-1/2 -translate-x-1/2 z-[10] inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-black/35 backdrop-blur-md border border-white/20 text-[9.5px] font-medium uppercase tracking-[0.26em] text-white/90 hover:text-white hover:border-white/40 transition-all cursor-pointer group">
+                          <span>Scroll down</span>
+                          <svg class="size-3 text-white/80 group-hover:translate-y-0.5 transition-transform animate-bounce" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M8 3v10M4.5 9.5 8 13l3.5-3.5" />
+                          </svg>
+                        </button>
+
+                      </div>
+                    </div>
+
+                    <!-- Right Column: Animated Service Panels -->
+                    <div class="lg:col-span-7 flex flex-col justify-center min-h-0 lg:pl-4">
+
+                      <!-- Middle: Overlapping 01–06 Service Panels in Dedicated Grid Stack (Zero Overlap) -->
+                      <div class="forge-panels-stack my-2 lg:my-4">
+
+                        <!-- PILLAR 01 / 06 -->
+                        <div data-wwd-forge-panel="0" data-wwd-row="0" data-n="01" data-cat="Supply chain" data-title="Strategic importation and distribution" data-img="assets/img/pillars/p1_cleanroom_inspect.jpg" data-sl="Cold-chain dispatch" data-sv="24–48 hours" data-desc="We source Rayner and partner products directly from the manufacturer, coordinate customs clearance, and keep cleanroom-grade inventory ready so surgeons never wait on a lens." data-pts="Product sourcing &amp; importation coordination|Cleanroom inventory reserves|GDP-compliant cold-chain logistics|Port-of-entry to operating-room tracking" class="forge-text-panel is-active">
+                          <h3 class="abt-serif text-[32px] sm:text-[44px] lg:text-[52px] font-normal text-white tracking-[-0.02em] leading-[1.06] mb-4 sm:mb-5">
+                            Strategic importation and distribution
+                          </h3>
+                          <p class="text-[14.5px] sm:text-[16px] text-white/85 leading-[1.68] max-w-[540px] mb-6">
+                            We source Rayner and partner products directly from the manufacturer, coordinate customs clearance, and keep cleanroom-grade inventory ready so surgeons never wait on a lens.
+                          </p>
+                          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 pt-4 border-t border-white/15 max-w-[540px]">
+                            <div class="flex items-center gap-2.5 text-[13px] text-white/75"><span class="size-1.5 rounded-full bg-[#72c5f8] shrink-0"></span><span>Product sourcing &amp; importation coordination</span></div>
+                            <div class="flex items-center gap-2.5 text-[13px] text-white/75"><span class="size-1.5 rounded-full bg-[#72c5f8] shrink-0"></span><span>Cleanroom inventory reserves</span></div>
+                            <div class="flex items-center gap-2.5 text-[13px] text-white/75"><span class="size-1.5 rounded-full bg-[#72c5f8] shrink-0"></span><span>GDP-compliant cold-chain logistics</span></div>
+                            <div class="flex items-center gap-2.5 text-[13px] text-white/75"><span class="size-1.5 rounded-full bg-[#72c5f8] shrink-0"></span><span>Port-of-entry to operating-room tracking</span></div>
+                          </div>
+                        </div>
+
+                        <!-- PILLAR 02 / 06 -->
+                        <div data-wwd-forge-panel="1" data-wwd-row="1" data-n="02" data-cat="Product Marketing" data-title="Product Marketing &amp; Brand Development" data-img="assets/img/pillars/p2_headquarters_brand.jpg" data-sl="Promotion standard" data-sv="Evidence-based" data-desc="Product Marketing &amp; Brand Development: brand positioning, launch campaigns, professional communication and product awareness through responsible, evidence-based promotion." data-pts="Market insight &amp; brand positioning|Authorized launch &amp; multichannel marketing|Field sales &amp; institutional development|Performance review &amp; partner feedback" class="forge-text-panel is-below">
+                          <h3 class="abt-serif text-[32px] sm:text-[44px] lg:text-[52px] font-normal text-white tracking-[-0.02em] leading-[1.06] mb-4 sm:mb-5">
+                            Product Marketing &amp; Brand Development
+                          </h3>
+                          <p class="text-[14.5px] sm:text-[16px] text-white/85 leading-[1.68] max-w-[540px] mb-6">
+                            Product Marketing &amp; Brand Development: brand positioning, launch campaigns, professional communication and product awareness through responsible, evidence-based promotion.
+                          </p>
+                          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 pt-4 border-t border-white/15 max-w-[540px]">
+                            <div class="flex items-center gap-2.5 text-[13px] text-white/75"><span class="size-1.5 rounded-full bg-[#72c5f8] shrink-0"></span><span>Market insight &amp; brand positioning</span></div>
+                            <div class="flex items-center gap-2.5 text-[13px] text-white/75"><span class="size-1.5 rounded-full bg-[#72c5f8] shrink-0"></span><span>Authorized launch &amp; multichannel marketing</span></div>
+                            <div class="flex items-center gap-2.5 text-[13px] text-white/75"><span class="size-1.5 rounded-full bg-[#72c5f8] shrink-0"></span><span>Field sales &amp; institutional development</span></div>
+                            <div class="flex items-center gap-2.5 text-[13px] text-white/75"><span class="size-1.5 rounded-full bg-[#72c5f8] shrink-0"></span><span>Performance review &amp; partner feedback</span></div>
+                          </div>
+                        </div>
+
+                        <!-- PILLAR 03 / 06 -->
+                        <div data-wwd-forge-panel="2" data-wwd-row="2" data-n="03" data-cat="Commercialization" data-title="Sales, Promotion &amp; Commercialization" data-img="assets/img/pillars/p3_specialist_discussion.jpg" data-sl="Commercial scope" data-sv="Institutional &amp; Field" data-desc="Sales, Promotion &amp; Commercialization: field sales, medical product presentations, institutional account development and coordinated market-growth programs." data-pts="Commercial planning &amp; customer insight|Channel expansion &amp; account development|Hospital &amp; procurement-team engagement|Coordinated principal collaboration" class="forge-text-panel is-below">
+                          <h3 class="abt-serif text-[32px] sm:text-[44px] lg:text-[52px] font-normal text-white tracking-[-0.02em] leading-[1.06] mb-4 sm:mb-5">
+                            Sales, Promotion &amp; Commercialization
+                          </h3>
+                          <p class="text-[14.5px] sm:text-[16px] text-white/85 leading-[1.68] max-w-[540px] mb-6">
+                            Sales, Promotion &amp; Commercialization: field sales, medical product presentations, institutional account development and coordinated market-growth programs.
+                          </p>
+                          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 pt-4 border-t border-white/15 max-w-[540px]">
+                            <div class="flex items-center gap-2.5 text-[13px] text-white/75"><span class="size-1.5 rounded-full bg-[#72c5f8] shrink-0"></span><span>Commercial planning &amp; customer insight</span></div>
+                            <div class="flex items-center gap-2.5 text-[13px] text-white/75"><span class="size-1.5 rounded-full bg-[#72c5f8] shrink-0"></span><span>Channel expansion &amp; account development</span></div>
+                            <div class="flex items-center gap-2.5 text-[13px] text-white/75"><span class="size-1.5 rounded-full bg-[#72c5f8] shrink-0"></span><span>Hospital &amp; procurement-team engagement</span></div>
+                            <div class="flex items-center gap-2.5 text-[13px] text-white/75"><span class="size-1.5 rounded-full bg-[#72c5f8] shrink-0"></span><span>Coordinated principal collaboration</span></div>
+                          </div>
+                        </div>
+
+                        <!-- PILLAR 04 / 06 -->
+                        <div data-wwd-forge-panel="3" data-wwd-row="3" data-n="04" data-cat="Quality &amp; Support" data-title="Quality &amp; Customer Support" data-img="assets/img/pillars/p6_quality_metrology.jpg" data-sl="Operating standard" data-sv="Verified SOPs" data-desc="Quality &amp; Customer Support: regulatory coordination, product traceability, responsible handling and responsive after-sales support." data-pts="Regulatory &amp; authorization coordination|Product &amp; lot-level traceability|SOP-guided responsible product handling|Product-scoped documentation &amp; after-sales support" class="forge-text-panel is-below">
+                          <h3 class="abt-serif text-[32px] sm:text-[44px] lg:text-[52px] font-normal text-white tracking-[-0.02em] leading-[1.06] mb-4 sm:mb-5">
+                            Quality &amp; Customer Support
+                          </h3>
+                          <p class="text-[14.5px] sm:text-[16px] text-white/85 leading-[1.68] max-w-[540px] mb-6">
+                            Quality &amp; Customer Support: regulatory coordination, product traceability, responsible handling and responsive after-sales support.
+                          </p>
+                          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 pt-4 border-t border-white/15 max-w-[540px]">
+                            <div class="flex items-center gap-2.5 text-[13px] text-white/75"><span class="size-1.5 rounded-full bg-[#72c5f8] shrink-0"></span><span>Regulatory &amp; authorization coordination</span></div>
+                            <div class="flex items-center gap-2.5 text-[13px] text-white/75"><span class="size-1.5 rounded-full bg-[#72c5f8] shrink-0"></span><span>Product &amp; lot-level traceability</span></div>
+                            <div class="flex items-center gap-2.5 text-[13px] text-white/75"><span class="size-1.5 rounded-full bg-[#72c5f8] shrink-0"></span><span>SOP-guided responsible product handling</span></div>
+                            <div class="flex items-center gap-2.5 text-[13px] text-white/75"><span class="size-1.5 rounded-full bg-[#72c5f8] shrink-0"></span><span>Product-scoped documentation &amp; support</span></div>
+                          </div>
+                        </div>
+
+                        <!-- PILLAR 05 / 06 -->
+                        <div data-wwd-forge-panel="4" data-wwd-row="4" data-n="05" data-cat="Professional Education" data-title="Professional Education" data-img="assets/img/pillars/p5_theatre_wetlab.jpg" data-sl="Learning scope" data-sv="Approved Content" data-desc="Professional Education: product knowledge sessions, appropriate demonstrations, educational events and technical engagement for healthcare professionals." data-pts="Product knowledge training sessions|Appropriate product demonstrations|Approved educational events|Technical engagement for healthcare professionals" class="forge-text-panel is-below">
+                          <h3 class="abt-serif text-[32px] sm:text-[44px] lg:text-[52px] font-normal text-white tracking-[-0.02em] leading-[1.06] mb-4 sm:mb-5">
+                            Professional Education
+                          </h3>
+                          <p class="text-[14.5px] sm:text-[16px] text-white/85 leading-[1.68] max-w-[540px] mb-6">
+                            Professional Education: product knowledge sessions, appropriate demonstrations, educational events and technical engagement for healthcare professionals.
+                          </p>
+                          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 pt-4 border-t border-white/15 max-w-[540px]">
+                            <div class="flex items-center gap-2.5 text-[13px] text-white/75"><span class="size-1.5 rounded-full bg-[#72c5f8] shrink-0"></span><span>Product knowledge training sessions</span></div>
+                            <div class="flex items-center gap-2.5 text-[13px] text-white/75"><span class="size-1.5 rounded-full bg-[#72c5f8] shrink-0"></span><span>Appropriate product demonstrations</span></div>
+                            <div class="flex items-center gap-2.5 text-[13px] text-white/75"><span class="size-1.5 rounded-full bg-[#72c5f8] shrink-0"></span><span>Approved educational events</span></div>
+                            <div class="flex items-center gap-2.5 text-[13px] text-white/75"><span class="size-1.5 rounded-full bg-[#72c5f8] shrink-0"></span><span>Technical engagement for professionals</span></div>
+                          </div>
+                        </div>
+
+                        <!-- PILLAR 06 / 06 -->
+                        <div data-wwd-forge-panel="5" data-wwd-row="5" data-n="06" data-cat="Relationships &amp; Continuity" data-title="Performance, Feedback &amp; Relationships" data-img="assets/img/pillars/p6_lot_traceability.jpg" data-sl="Post-delivery care" data-sv="Responsive Support" data-desc="Our commitment continues after delivery through responsive customer support, accurate product information, feedback coordination and appropriate issue escalation." data-pts="Responsive customer follow-up|Accurate product information &amp; traceability|Structured feedback coordination|Appropriate issue escalation &amp; principal alignment" class="forge-text-panel is-below">
+                          <h3 class="abt-serif text-[32px] sm:text-[44px] lg:text-[52px] font-normal text-white tracking-[-0.02em] leading-[1.06] mb-4 sm:mb-5">
+                            Performance, Feedback &amp; Relationships
+                          </h3>
+                          <p class="text-[14.5px] sm:text-[16px] text-white/85 leading-[1.68] max-w-[540px] mb-6">
+                            Our commitment continues after delivery through responsive customer support, accurate product information, feedback coordination and appropriate issue escalation.
+                          </p>
+                          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 pt-4 border-t border-white/15 max-w-[540px]">
+                            <div class="flex items-center gap-2.5 text-[13px] text-white/75"><span class="size-1.5 rounded-full bg-[#72c5f8] shrink-0"></span><span>Responsive customer follow-up</span></div>
+                            <div class="flex items-center gap-2.5 text-[13px] text-white/75"><span class="size-1.5 rounded-full bg-[#72c5f8] shrink-0"></span><span>Accurate product information &amp; traceability</span></div>
+                            <div class="flex items-center gap-2.5 text-[13px] text-white/75"><span class="size-1.5 rounded-full bg-[#72c5f8] shrink-0"></span><span>Structured feedback coordination</span></div>
+                            <div class="flex items-center gap-2.5 text-[13px] text-white/75"><span class="size-1.5 rounded-full bg-[#72c5f8] shrink-0"></span><span>Issue escalation &amp; principal alignment</span></div>
+                          </div>
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+
+                <!-- 3. Bottom Full-Width Subtle Marquee Ticker -->
+                <div class="abt-ticker-strip relative z-20 shrink-0 w-full border-t border-[#5eb2f6]/14 bg-[#041026]/55 backdrop-blur-sm py-3.5 overflow-hidden select-none">
+                  <div class="abt-ticker-track items-center text-[12.5px] sm:text-[13.5px] font-bold uppercase tracking-[0.14em] text-[#5d82aa]/55">
+                    <div class="flex items-center gap-7 sm:gap-9 pr-7 sm:pr-9">
+                      <span class="whitespace-nowrap">STRATEGIC DISTRIBUTION</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">PRODUCT MARKETING</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">COMMERCIALIZATION</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">QUALITY &amp; SUPPORT</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">PROFESSIONAL EDUCATION</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">STRATEGIC DISTRIBUTION</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">PRODUCT MARKETING</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">COMMERCIALIZATION</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">QUALITY &amp; SUPPORT</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">PROFESSIONAL EDUCATION</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                    </div>
+                    <div class="flex items-center gap-7 sm:gap-9 pr-7 sm:pr-9" aria-hidden="true">
+                      <span class="whitespace-nowrap">STRATEGIC DISTRIBUTION</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">PRODUCT MARKETING</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">COMMERCIALIZATION</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">QUALITY &amp; SUPPORT</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">PROFESSIONAL EDUCATION</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">STRATEGIC DISTRIBUTION</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">PRODUCT MARKETING</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">COMMERCIALIZATION</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">QUALITY &amp; SUPPORT</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                      <span class="whitespace-nowrap">PROFESSIONAL EDUCATION</span>
+                      <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- Learn-more detail modal -->
+            <div id="wwd-modal" class="fixed inset-0 z-50 items-center justify-center p-4 sm:p-8 bg-[#0a1d40]/85 backdrop-blur-md opacity-0 transition-opacity duration-300" style="display:none" role="dialog" aria-modal="true" aria-labelledby="wwd-modal-title">
+              <div class="relative w-full max-w-5xl max-h-full overflow-y-auto rounded-2xl border border-[#72c5f8]/30 bg-[#0a1d40] shadow-[0_30px_80px_rgba(0,0,0,0.8)] grid grid-cols-1 md:grid-cols-2">
+                <button type="button" id="wwd-modal-close" aria-label="Close" class="absolute top-3 right-3 z-10 size-9 rounded-full bg-black/60 border border-white/15 hover:border-sky text-white flex items-center justify-center cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#72c5f8]/70">
+                  <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+                </button>
+                <div class="relative min-h-[220px] md:min-h-[420px]">
+                  <img id="wwd-modal-img" src="" alt="" class="absolute inset-0 h-full w-full object-cover">
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#0a1d40] via-transparent to-transparent md:bg-gradient-to-r"></div>
+                </div>
+                <div class="p-6 sm:p-8 flex flex-col gap-3">
+                  <span id="wwd-modal-tag" class="self-start text-[12px] text-[#72c5f8] uppercase tracking-wider font-semibold"></span>
+                  <h3 id="wwd-modal-title" class="abt-serif text-2xl sm:text-3xl font-bold text-white leading-tight"></h3>
+                  <p id="wwd-modal-desc" class="text-sm sm:text-base text-[#9bb3cf] leading-relaxed"></p>
+                  <ul id="wwd-modal-pts" class="grid gap-2 text-sm text-cream/90"></ul>
+                  <div class="mt-auto pt-4 border-t border-white/10 flex items-center justify-between gap-3">
+                    <div><div id="wwd-modal-sl" class="text-[12px] text-[#9bb3cf]"></div><div id="wwd-modal-sv" class="abt-serif text-xl font-bold text-[#72c5f8]"></div></div>
+                    <a href="#contact" id="wwd-modal-cta" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-md border border-[#72c5f8]/35 text-[12.5px] font-semibold text-white hover:bg-[#72c5f8]/15 transition-colors cursor-pointer"><span>Contact us</span><svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- ===================================================================== -->
+          <!-- SECTION 3: OUR ESTABLISHED FOUNDATION (Rayner UK Partnership)         -->
+          <!-- ===================================================================== -->
+          <div id="about-sec-foundation" class="abt-subpage-panel is-hidden-subpage relative isolate z-10 w-full min-h-[calc(100svh-128px)] flex flex-col justify-between abt-hairline-b bg-[#07193a]/55 overflow-hidden">
+            <style>
+              #about-sec-foundation .fnd-sans {
+                font-family: 'Plus Jakarta Sans', 'Inter', var(--font-sans, 'Manrope'), -apple-system, BlinkMacSystemFont, sans-serif;
+              }
+              #about-sec-foundation .fnd-blueprint-grid {
+                background-image:
+                  linear-gradient(rgba(114, 197, 248, 0.036) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(114, 197, 248, 0.036) 1px, transparent 1px);
+                background-size: 46px 46px;
+                -webkit-mask-image: radial-gradient(ellipse 85% 80% at 48% 50%, #000 45%, transparent 100%);
+                mask-image: radial-gradient(ellipse 85% 80% at 48% 50%, #000 45%, transparent 100%);
+              }
+              #about-sec-foundation .fnd-grid {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr);
+                gap: 2rem;
+                align-items: center;
+                width: 100%;
+              }
+              @media (min-width: 1024px) {
+                #about-sec-foundation .fnd-grid {
+                  grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+                  gap: 3.5rem;
+                }
+              }
+              #about-sec-foundation .fnd-copy {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+              }
+              #about-sec-foundation .fnd-partner-col {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                min-height: 320px;
+              }
+              #about-sec-foundation .fnd-partner-wrap {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                perspective: 1400px;
+              }
+              #about-sec-foundation #fnd-partner-stage {
+                width: 100%;
+                max-width: min(900px, calc((100svh - 225px) * 1.654));
+                aspect-ratio: 900 / 544;
+                height: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: transform 0.3s ease-out;
+                transform-style: preserve-3d;
+                will-change: transform;
+              }
+              #about-sec-foundation #fnd-partner-stage svg {
+                width: 100%;
+                height: 100%;
+                display: block;
+                overflow: visible;
+              }
+              @keyframes fndTickerScroll {
+                0% { transform: translate3d(0, 0, 0); }
+                100% { transform: translate3d(-50%, 0, 0); }
+              }
+              #about-sec-foundation .fnd-ticker-track {
+                display: flex;
+                width: max-content;
+                animation: fndTickerScroll 34s linear infinite;
+              }
+              @media (prefers-reduced-motion: reduce) {
+                #about-sec-foundation #fnd-partner-stage {
+                  transition: none !important;
+                  transform: none !important;
+                }
+                #about-sec-foundation .fnd-ticker-track {
+                  animation: none !important;
+                }
+              }
+            </style>
+
+            <!-- Subtle Architectural Grid & Blended Optical Ambient Glows -->
+            <div class="pointer-events-none absolute inset-0 fnd-blueprint-grid"></div>
+            <div class="pointer-events-none absolute top-1/2 left-[14%] -translate-y-1/2 w-[620px] h-[620px] rounded-full bg-[radial-gradient(circle,rgba(36,118,220,0.16)_0%,rgba(12,52,124,0.08)_45%,transparent_72%)] blur-2xl"></div>
+            <div class="pointer-events-none absolute top-[44%] right-[4%] -translate-y-1/2 w-[540px] h-[420px] rounded-full bg-[radial-gradient(circle,rgba(56,156,244,0.09)_0%,transparent_70%)] blur-2xl"></div>
+
+            <!-- Main Two-Column Content Area (1Centre Layout Split: Visual Left, Editorial Copy Right) -->
+            <div class="ih-shell abt-subpage-shell fnd-sans relative z-10 flex-1 flex items-center w-full">
+              <div class="fnd-grid">
+
+                <!-- Right Column (Desktop): Editorial Narrative Centered Comfortably in Right Half -->
+                <div class="fnd-copy order-1 lg:order-2 w-full max-w-[610px] lg:mx-auto lg:pl-8 xl:pl-12 relative z-20">
+                  <p class="ih-eyebrow">
+                    <span>OUR ESTABLISHED FOUNDATION</span>
+                    <span class="inline-block h-0.5 bg-sky/50 w-12 ml-1"></span>
+                  </p>
+
+                  <h2 id="fnd-heading" class="abt-serif text-[42px] sm:text-[52px] xl:text-[60px] font-bold text-[#f4f7fb] tracking-[-0.025em] leading-[1.06] mt-3">
+                    <span class="block">Our Established</span>
+                    <span class="block font-bold text-[#6fa4d8] mt-0.5">Foundation.</span>
+                  </h2>
+
+                  <p id="fnd-lead" class="ih-lead max-w-[590px] text-[15.5px] leading-[1.58] text-[#f6f2ea]/90 mt-4">
+                    <strong class="font-semibold text-white">MEDIQ</strong> has established expertise in ophthalmology, including its exclusive Philippine distribution relationship for <strong class="font-semibold text-white">Rayner</strong> intraocular lenses from the United Kingdom. Our work with advanced ophthalmic solutions provides a foundation for expansion into complementary healthcare disciplines.
+                  </p>
+
+                  <!-- Dedicated open channel for the focal beam & horizontal streaming particles -->
+                  <div id="fnd-beam-channel" class="h-12 sm:h-14 w-full pointer-events-none" aria-hidden="true"></div>
+
+                  <!-- 01 & 02 Rounded Navy Glass Cards -->
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-[610px] mt-1">
+                    <div class="relative rounded-[12px] bg-[#061530]/75 backdrop-blur-md border border-[#72c5f8]/20 px-5 py-4 transition-all duration-300 hover:border-[#72c5f8]/45 hover:bg-[#081b3c]/80">
+                      <span class="pointer-events-none absolute -top-[1px] left-4 h-[2px] w-12 rounded-full bg-[#5eb2f6] shadow-[0_0_10px_rgba(94,178,246,0.65)]"></span>
+                      <div class="font-mono text-[12px] font-semibold text-[#5eb2f6] tracking-[0.12em] mb-1.5">01</div>
+                      <h3 class="abt-serif text-[18px] sm:text-[20px] font-semibold text-[#dce7f5] tracking-[-0.015em] mb-1.5">Established Expertise</h3>
+                      <p class="text-[13px] text-[#8ba5c4]/90 leading-[1.55]">
+                        Exclusive Philippine distribution relationship for Rayner intraocular lenses from the United Kingdom.
+                      </p>
+                    </div>
+
+                    <div class="relative rounded-[12px] bg-[#061530]/75 backdrop-blur-md border border-[#72c5f8]/20 px-5 py-4 transition-all duration-300 hover:border-[#72c5f8]/45 hover:bg-[#081b3c]/80">
+                      <span class="pointer-events-none absolute -top-[1px] left-4 h-[2px] w-12 rounded-full bg-[#5eb2f6] shadow-[0_0_10px_rgba(94,178,246,0.65)]"></span>
+                      <div class="font-mono text-[12px] font-semibold text-[#5eb2f6] tracking-[0.12em] mb-1.5">02</div>
+                      <h3 class="abt-serif text-[18px] sm:text-[20px] font-semibold text-[#dce7f5] tracking-[-0.015em] mb-1.5">Responsible Growth</h3>
+                      <p class="text-[13px] text-[#8ba5c4]/90 leading-[1.55]">
+                        Disciplined expansion into complementary healthcare disciplines, subject to applicable authorizations.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Left-Rule Strategic Quote -->
+                  <blockquote class="border-l-2 border-[#4ea4ec]/75 pl-5 max-w-[610px] mt-5 text-[14.5px] text-[#dce7f5]/90 leading-[1.58]">
+                    &ldquo;Complementary portfolio expansion is a strategic opportunity and is subject to licensing, ethical regulatory compliance, and partner authorization.&rdquo;
+                  </blockquote>
+                </div>
+
+                <!-- Left Column (Desktop): MEDIQ Convergence Visual Stage -->
+                <div class="fnd-partner-col order-2 lg:order-1 relative select-none z-20">
+                  <div class="fnd-partner-wrap">
+                    <div id="fnd-partner-stage">
+                      <svg viewBox="0 0 900 544" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-label="MEDIQ Pharma and Medical Supplies Distribution">
+                        <defs>
+                          <radialGradient id="fnd-gDisc" cx=".5" cy=".5" r=".5">
+                            <stop offset="0" stop-color="#2a7be0" stop-opacity=".015"/>
+                            <stop offset=".8" stop-color="#2a7be0" stop-opacity=".05"/>
+                            <stop offset="1" stop-color="#6fb8ff" stop-opacity=".16"/>
+                          </radialGradient>
+                          <radialGradient id="fnd-gLens" cx=".5" cy=".5" r=".5">
+                            <stop offset="0" stop-color="#7cc0ff" stop-opacity=".20"/>
+                            <stop offset="1" stop-color="#3a8cf0" stop-opacity=".09"/>
+                          </radialGradient>
+                          <linearGradient id="fnd-gRim" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0" stop-color="#bfe3ff" stop-opacity=".42"/>
+                            <stop offset=".5" stop-color="#5ab4ff" stop-opacity=".08"/>
+                            <stop offset="1" stop-color="#bfe3ff" stop-opacity=".30"/>
+                          </linearGradient>
+                          <filter id="fnd-soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="30"/></filter>
+                          <filter id="fnd-b3" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter>
+                          <filter id="fnd-lg" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#5ab4ff" flood-opacity=".25"/></filter>
+                          <clipPath id="fnd-clipL"><circle class="fnd-cl" cx="242" cy="272" r="256"/></clipPath>
+                          <clipPath id="fnd-clipR"><circle class="fnd-cr" cx="658" cy="272" r="256"/></clipPath>
+                        </defs>
+
+                        <ellipse id="fnd-glow" cx="450" cy="272" rx="375" ry="235" fill="#1f6fe0" opacity=".10" filter="url(#fnd-soft)"/>
+                        <g id="fnd-parts"></g>
+
+                        <g id="fnd-L">
+                          <circle class="fnd-cl" cx="242" cy="272" r="256" fill="url(#fnd-gDisc)"/>
+                          <circle class="fnd-cl" data-dx="-2.5" cx="239.5" cy="272" r="256" fill="none" stroke="#4fd8ff" stroke-opacity=".12" stroke-width="1.5"/>
+                          <circle class="fnd-cl" data-dx="2.5" cx="244.5" cy="272" r="256" fill="none" stroke="#ffb070" stroke-opacity=".09" stroke-width="1.5"/>
+                          <circle class="fnd-cl" cx="242" cy="272" r="256" fill="none" stroke="url(#fnd-gRim)" stroke-width="1.5"/>
+                          <circle class="fnd-cl fnd-hl" id="fnd-hlL" cx="242" cy="272" r="256" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="3" stroke-linecap="round" stroke-dasharray="74 1535" filter="url(#fnd-b3)"/>
+                        </g>
+                        <g id="fnd-R">
+                          <circle class="fnd-cr" cx="658" cy="272" r="256" fill="url(#fnd-gDisc)"/>
+                          <circle class="fnd-cr" data-dx="-2.5" cx="655.5" cy="272" r="256" fill="none" stroke="#4fd8ff" stroke-opacity=".12" stroke-width="1.5"/>
+                          <circle class="fnd-cr" data-dx="2.5" cx="660.5" cy="272" r="256" fill="none" stroke="#ffb070" stroke-opacity=".09" stroke-width="1.5"/>
+                          <circle class="fnd-cr" cx="658" cy="272" r="256" fill="none" stroke="url(#fnd-gRim)" stroke-width="1.5"/>
+                          <circle class="fnd-cr fnd-hl" id="fnd-hlR" cx="658" cy="272" r="256" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="3" stroke-linecap="round" stroke-dasharray="74 1535" filter="url(#fnd-b3)"/>
+                        </g>
+
+                        <g id="fnd-lens" style="opacity:0">
+                          <g clip-path="url(#fnd-clipL)">
+                            <circle class="fnd-cr" cx="658" cy="272" r="256" fill="url(#fnd-gLens)"/>
+                            <circle class="fnd-cr" cx="658" cy="272" r="256" fill="none" stroke="#9fd4ff" stroke-opacity=".55" stroke-width="1.6"/>
+                          </g>
+                          <g clip-path="url(#fnd-clipR)">
+                            <circle class="fnd-cl" cx="242" cy="272" r="256" fill="none" stroke="#9fd4ff" stroke-opacity=".55" stroke-width="1.6"/>
+                          </g>
+                        </g>
+
+                        <image id="fnd-iL" href="assets/img/fnd-partner-mq.png" xlink:href="assets/img/fnd-partner-mq.png" x="49.5" y="214.89" width="385" height="114.22" filter="url(#fnd-lg)"/>
+                        <image id="fnd-iR" href="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" xlink:href="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" x="488" y="231.32" width="340" height="81.36" filter="url(#fnd-lg)"/>
+                        <image id="fnd-iK" href="assets/img/fnd-partner-mq.png" xlink:href="assets/img/fnd-partner-mq.png" x="242.5" y="150.82" width="415" height="242.36" style="opacity:0" filter="url(#fnd-lg)"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Bottom Full-Width Subtle Marquee Ticker -->
+            <div class="abt-ticker-strip fnd-sans relative z-10 shrink-0 w-full border-t border-[#5eb2f6]/14 bg-[#041026]/35 py-3.5 overflow-hidden select-none">
+              <div class="fnd-ticker-track items-center text-[12.5px] sm:text-[13.5px] font-bold uppercase tracking-[0.14em] text-[#5d82aa]/55">
+                <div class="flex items-center gap-7 sm:gap-9 pr-7 sm:pr-9">
+                  <span>OPHTHALMOLOGY</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span>RAYNER IOL</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span>CLARITY</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span>PRECISION</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span>RESPONSIBLE GROWTH</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span>OPHTHALMOLOGY</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span>RAYNER IOL</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span>CLARITY</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span>PRECISION</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span>RESPONSIBLE GROWTH</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                </div>
+                <div class="flex items-center gap-7 sm:gap-9 pr-7 sm:pr-9" aria-hidden="true">
+                  <span>OPHTHALMOLOGY</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span>RAYNER IOL</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span>CLARITY</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span>PRECISION</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span>RESPONSIBLE GROWTH</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span>OPHTHALMOLOGY</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span>RAYNER IOL</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span>CLARITY</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span>PRECISION</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span>RESPONSIBLE GROWTH</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===================================================================== -->
+          <!-- SECTION 4: CORE VALUES (Editorial Split & 6 Navy-Glass Cards)         -->
+          <!-- ===================================================================== -->
+          <div id="about-sec-values" class="abt-subpage-panel is-hidden-subpage relative isolate z-10 w-full min-h-[calc(100svh-128px)] flex flex-col justify-between abt-hairline-b bg-[#061634]/55 overflow-hidden">
+            <style>
+              #about-sec-values .cv-sans {
+                font-family: 'Plus Jakarta Sans', 'Inter', var(--font-sans, 'Manrope'), -apple-system, BlinkMacSystemFont, sans-serif;
+              }
+
+              /* Slowly drifting architectural blueprint grid */
+              @keyframes cvGridDrift {
+                0% { background-position: 0px 0px; }
+                100% { background-position: 48px 48px; }
+              }
+              #about-sec-values .cv-blueprint-grid {
+                background-image:
+                  linear-gradient(rgba(114, 197, 248, 0.05) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(114, 197, 248, 0.05) 1px, transparent 1px);
+                background-size: 48px 48px;
+                animation: cvGridDrift 28s linear infinite;
+              }
+
+              /* Main 2-Column Editorial Split Layout */
+              #about-sec-values .cv-split-grid {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr);
+                gap: 2.75rem;
+                align-items: center;
+                width: 100%;
+              }
+              @media (min-width: 1024px) {
+                #about-sec-values .cv-split-grid {
+                  grid-template-columns: minmax(0, 0.84fr) minmax(0, 1.16fr);
+                  gap: clamp(2.75rem, 4.6vw, 5.25rem);
+                }
+              }
+
+              /* Left Column: Eyebrow, Headline with Shimmer, and Intro */
+              #about-sec-values .cv-eyebrow-row {
+                display: inline-flex;
+                align-items: center;
+                gap: 14px;
+              }
+              #about-sec-values .cv-eyebrow-line {
+                display: inline-block;
+                width: 28px;
+                height: 2px;
+                border-radius: 999px;
+                background: #5aa8e8;
+                transform-origin: left center;
+              }
+              #about-sec-values .cv-eyebrow-label {
+                font-size: 12px;
+                font-weight: 700;
+                letter-spacing: 0.2em;
+                text-transform: uppercase;
+                color: #67aee8;
+              }
+              #about-sec-values .cv-headline {
+                font-size: clamp(40px, 4.15vw, 62px);
+                font-weight: 700;
+                letter-spacing: -0.03em;
+                line-height: 1.06;
+                color: #f4f7fb;
+                margin-top: 20px;
+              }
+
+              /* Continuous light shimmer running across "decision we make." */
+              @keyframes cvHeadlineShimmer {
+                0%, 16% { background-position: 100% 50%; }
+                76%, 100% { background-position: 0% 50%; }
+              }
+              #about-sec-values .cv-shimmer-phrase {
+                display: inline-block;
+                background-image: linear-gradient(
+                  110deg,
+                  #6fa4d8 0%,
+                  #6fa4d8 36%,
+                  #e3f4ff 49%,
+                  #9fd3ff 55%,
+                  #6fa4d8 68%,
+                  #6fa4d8 100%
+                );
+                background-size: 240% 100%;
+                background-position: 100% 50%;
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+                animation: cvHeadlineShimmer 5.2s ease-in-out infinite;
+              }
+
+              #about-sec-values .cv-intro {
+                max-width: 440px;
+                margin-top: 24px;
+                font-size: clamp(15px, 1.08vw, 16.5px);
+                line-height: 1.65;
+                color: rgba(182, 206, 234, 0.9);
+              }
+
+              /* Right Column: 2x3 Navy-Glass Cards Grid */
+              #about-sec-values .cv-cards-grid {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr);
+                gap: 20px;
+                width: 100%;
+              }
+              @media (min-width: 640px) {
+                #about-sec-values .cv-cards-grid {
+                  grid-template-columns: repeat(2, minmax(0, 1fr));
+                }
+              }
+
+              /* Card Surface, Hover Lift & Sequential Shine Sweep */
+              @keyframes cvCardShine {
+                0% {
+                  transform: translateX(-190%) skewX(-24deg);
+                  opacity: 0;
+                }
+                3% {
+                  opacity: 1;
+                }
+                18% {
+                  transform: translateX(310%) skewX(-24deg);
+                  opacity: 1;
+                }
+                21%, 100% {
+                  transform: translateX(310%) skewX(-24deg);
+                  opacity: 0;
+                }
+              }
+              #about-sec-values .cv-card {
+                position: relative;
+                overflow: hidden;
+                border-radius: 20px;
+                padding: 22px 24px;
+                min-height: 162px;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                background: linear-gradient(155deg, rgba(16, 44, 94, 0.56) 0%, rgba(8, 24, 56, 0.74) 100%);
+                border: 1px solid rgba(114, 197, 248, 0.16);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                box-shadow: 0 12px 34px rgba(2, 10, 28, 0.38), inset 0 1px 0 rgba(186, 230, 253, 0.08);
+                transition:
+                  transform 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+                  border-color 0.32s ease,
+                  box-shadow 0.32s ease,
+                  background 0.32s ease;
+              }
+              #about-sec-values .cv-card::after {
+                content: '';
+                position: absolute;
+                top: -20%;
+                bottom: -20%;
+                left: 0;
+                width: 58%;
+                pointer-events: none;
+                background: linear-gradient(
+                  90deg,
+                  rgba(148, 210, 255, 0) 0%,
+                  rgba(168, 220, 255, 0.09) 45%,
+                  rgba(224, 242, 254, 0.17) 52%,
+                  rgba(148, 210, 255, 0) 100%
+                );
+                transform: translateX(-190%) skewX(-24deg);
+                animation: cvCardShine 9.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+                animation-delay: calc(1.6s + var(--cv-idx, 0) * 0.85s);
+              }
+              #about-sec-values .cv-card:hover {
+                transform: translateY(-5px);
+                border-color: rgba(125, 206, 255, 0.46);
+                box-shadow:
+                  0 18px 42px rgba(2, 10, 30, 0.56),
+                  0 0 28px rgba(64, 158, 245, 0.16),
+                  inset 0 1px 0 rgba(224, 242, 254, 0.18);
+              }
+
+              /* Partnership Card (05): Slow Pulsing Glow */
+              @keyframes cvPartnershipGlow {
+                0%, 100% {
+                  border-color: rgba(114, 197, 248, 0.28);
+                  box-shadow:
+                    0 12px 34px rgba(2, 10, 28, 0.42),
+                    0 0 20px rgba(68, 160, 248, 0.11),
+                    inset 0 0 18px rgba(68, 160, 248, 0.04);
+                }
+                50% {
+                  border-color: rgba(138, 212, 255, 0.58);
+                  box-shadow:
+                    0 14px 38px rgba(2, 10, 28, 0.48),
+                    0 0 38px rgba(68, 164, 252, 0.28),
+                    inset 0 0 28px rgba(88, 180, 255, 0.12);
+                }
+              }
+              #about-sec-values .cv-card--partnership {
+                animation: cvPartnershipGlow 4.8s ease-in-out infinite;
+              }
+              #about-sec-values .cv-card--partnership:hover {
+                border-color: rgba(150, 220, 255, 0.68);
+                box-shadow:
+                  0 18px 44px rgba(2, 10, 30, 0.58),
+                  0 0 42px rgba(72, 168, 255, 0.34),
+                  inset 0 0 30px rgba(96, 186, 255, 0.14);
+              }
+
+              /* Top Row: Gently Floating Icon Badge & Index Number */
+              @keyframes cvIconFloat {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-3.5px); }
+              }
+              #about-sec-values .cv-card-top {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                gap: 12px;
+              }
+              #about-sec-values .cv-card-icon {
+                width: 44px;
+                height: 44px;
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: rgba(20, 56, 118, 0.52);
+                border: 1px solid rgba(114, 197, 248, 0.24);
+                color: #84c5f8;
+                animation: cvIconFloat 4.2s ease-in-out infinite;
+                animation-delay: calc(var(--cv-idx, 0) * -0.65s);
+                transition:
+                  background-color 0.3s ease,
+                  border-color 0.3s ease,
+                  color 0.3s ease,
+                  box-shadow 0.3s ease;
+              }
+              #about-sec-values .cv-card:hover .cv-card-icon {
+                background: rgba(42, 108, 206, 0.5);
+                border-color: rgba(156, 220, 255, 0.74);
+                color: #eef8ff;
+                box-shadow: 0 0 20px rgba(86, 180, 255, 0.38);
+              }
+              #about-sec-values .cv-card-num {
+                font-size: 13px;
+                font-weight: 700;
+                letter-spacing: 0.06em;
+                color: #79b4eb;
+                padding-top: 6px;
+              }
+              #about-sec-values .cv-card-body {
+                margin-top: 20px;
+              }
+              #about-sec-values .cv-card-title {
+                font-size: 19.5px;
+                font-weight: 700;
+                letter-spacing: -0.015em;
+                line-height: 1.25;
+                color: #f4f7fb;
+              }
+              #about-sec-values .cv-card-desc {
+                font-size: 14px;
+                line-height: 1.48;
+                color: #9cb6d4;
+                margin-top: 5px;
+              }
+
+              /* On-Load Entrance Choreography: Eyebrow Line & Label -> Headline -> Intro -> 6 Cards One-by-One */
+              #about-sec-values.cv-js-ready:not(.cv-is-loaded) .cv-eyebrow-line {
+                opacity: 0;
+                transform: scaleX(0);
+              }
+              #about-sec-values.cv-js-ready:not(.cv-is-loaded) .cv-eyebrow-label {
+                opacity: 0;
+                transform: translateX(-10px);
+              }
+              #about-sec-values.cv-js-ready:not(.cv-is-loaded) .cv-headline,
+              #about-sec-values.cv-js-ready:not(.cv-is-loaded) .cv-intro {
+                opacity: 0;
+                transform: translateY(18px);
+              }
+              #about-sec-values.cv-js-ready:not(.cv-is-loaded) .cv-card-slot {
+                opacity: 0;
+                transform: translateY(24px);
+              }
+
+              #about-sec-values.cv-js-ready.cv-is-loaded .cv-eyebrow-line {
+                opacity: 1;
+                transform: scaleX(1);
+                transition:
+                  transform 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.02s,
+                  opacity 0.35s ease 0.02s;
+              }
+              #about-sec-values.cv-js-ready.cv-is-loaded .cv-eyebrow-label {
+                opacity: 1;
+                transform: translateX(0);
+                transition:
+                  opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.14s,
+                  transform 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.14s;
+              }
+              #about-sec-values.cv-js-ready.cv-is-loaded .cv-headline {
+                opacity: 1;
+                transform: translateY(0);
+                transition:
+                  opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.28s,
+                  transform 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.28s;
+              }
+              #about-sec-values.cv-js-ready.cv-is-loaded .cv-intro {
+                opacity: 1;
+                transform: translateY(0);
+                transition:
+                  opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.42s,
+                  transform 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.42s;
+              }
+              #about-sec-values.cv-js-ready.cv-is-loaded .cv-card-slot {
+                opacity: 1;
+                transform: translateY(0);
+                transition:
+                  opacity 0.62s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.62s cubic-bezier(0.22, 1, 0.36, 1);
+                transition-delay: calc(0.54s + var(--cv-idx, 0) * 0.11s);
+              }
+
+              /* Reduced Motion: Switch off every animation, shimmer, drift, float, sweep & lift */
+              @media (prefers-reduced-motion: reduce) {
+                #about-sec-values .cv-blueprint-grid,
+                #about-sec-values .cv-shimmer-phrase,
+                #about-sec-values .cv-card,
+                #about-sec-values .cv-card::after,
+                #about-sec-values .cv-card--partnership,
+                #about-sec-values .cv-card-icon {
+                  animation: none !important;
+                }
+                #about-sec-values .cv-card::after {
+                  display: none !important;
+                }
+                #about-sec-values .cv-shimmer-phrase {
+                  background-image: none !important;
+                  -webkit-background-clip: border-box !important;
+                  background-clip: border-box !important;
+                  color: #6fa4d8 !important;
+                }
+                #about-sec-values .cv-eyebrow-line,
+                #about-sec-values .cv-eyebrow-label,
+                #about-sec-values .cv-headline,
+                #about-sec-values .cv-intro,
+                #about-sec-values .cv-card-slot,
+                #about-sec-values .cv-card,
+                #about-sec-values .cv-card:hover,
+                #about-sec-values .cv-card-icon {
+                  opacity: 1 !important;
+                  transform: none !important;
+                  transition: none !important;
+                }
+              }
+            </style>
+
+            <!-- Drifting Blueprint Grid & Subtle Ambient Royal-Blue Glows -->
+            <div class="pointer-events-none absolute inset-0 cv-blueprint-grid z-[1]"></div>
+            <div class="pointer-events-none absolute -top-24 right-[-6%] w-[620px] h-[520px] rounded-full bg-[radial-gradient(circle,rgba(36,118,226,0.22)_0%,rgba(14,54,128,0.08)_48%,transparent_72%)] blur-2xl z-[1]"></div>
+            <div class="pointer-events-none absolute bottom-[-12%] left-[-6%] w-[520px] h-[420px] rounded-full bg-[radial-gradient(circle,rgba(32,102,204,0.14)_0%,transparent_70%)] blur-2xl z-[1]"></div>
+
+            <!-- Main Content Container -->
+            <div class="ih-shell abt-subpage-shell cv-sans relative z-10 flex-1 flex items-center w-full">
+              <div class="cv-split-grid">
+
+                <!-- Left Column: Eyebrow + Headline + Intro -->
+                <div class="max-w-xl">
+                  <div class="cv-eyebrow-row">
+                    <span class="cv-eyebrow-line" aria-hidden="true"></span>
+                    <span class="cv-eyebrow-label">OUR CORE VALUES</span>
+                  </div>
+
+                  <h2 class="cv-headline abt-serif">
+                    <span class="block">The principles</span>
+                    <span class="block">behind every</span>
+                    <span class="cv-shimmer-phrase">decision we make.</span>
+                  </h2>
+
+                  <p class="cv-intro">
+                    Principles that guide responsible healthcare distribution and long-term partnerships &mdash; the standards we hold ourselves to every day.
+                  </p>
+                </div>
+
+                <!-- Right Column: 6 Core Value Cards (01..06) -->
+                <div class="cv-cards-grid">
+
+                  <!-- 01 Integrity -->
+                  <div class="cv-card-slot" style="--cv-idx: 0;">
+                    <article class="cv-card" style="--cv-idx: 0;">
+                      <div class="cv-card-top">
+                        <div class="cv-card-icon" style="--cv-idx: 0;" aria-hidden="true">
+                          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
+                            <path d="m9 12 2 2 4-4"/>
+                          </svg>
+                        </div>
+                        <span class="cv-card-num">01</span>
+                      </div>
+                      <div class="cv-card-body">
+                        <h3 class="cv-card-title">Integrity</h3>
+                        <p class="cv-card-desc">Ethical and transparent conduct.</p>
+                      </div>
+                    </article>
+                  </div>
+
+                  <!-- 02 Innovation -->
+                  <div class="cv-card-slot" style="--cv-idx: 1;">
+                    <article class="cv-card" style="--cv-idx: 1;">
+                      <div class="cv-card-top">
+                        <div class="cv-card-icon" style="--cv-idx: 1;" aria-hidden="true">
+                          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/>
+                            <path d="M9 18h6"/>
+                            <path d="M10 22h4"/>
+                          </svg>
+                        </div>
+                        <span class="cv-card-num">02</span>
+                      </div>
+                      <div class="cv-card-body">
+                        <h3 class="cv-card-title">Innovation</h3>
+                        <p class="cv-card-desc">Progress through better ideas.</p>
+                      </div>
+                    </article>
+                  </div>
+
+                  <!-- 03 Excellence -->
+                  <div class="cv-card-slot" style="--cv-idx: 2;">
+                    <article class="cv-card" style="--cv-idx: 2;">
+                      <div class="cv-card-top">
+                        <div class="cv-card-icon" style="--cv-idx: 2;" aria-hidden="true">
+                          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="8" r="6"/>
+                            <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+                          </svg>
+                        </div>
+                        <span class="cv-card-num">03</span>
+                      </div>
+                      <div class="cv-card-body">
+                        <h3 class="cv-card-title">Excellence</h3>
+                        <p class="cv-card-desc">Quality in every interaction.</p>
+                      </div>
+                    </article>
+                  </div>
+
+                  <!-- 04 Reliability -->
+                  <div class="cv-card-slot" style="--cv-idx: 3;">
+                    <article class="cv-card" style="--cv-idx: 3;">
+                      <div class="cv-card-top">
+                        <div class="cv-card-icon" style="--cv-idx: 3;" aria-hidden="true">
+                          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                          </svg>
+                        </div>
+                        <span class="cv-card-num">04</span>
+                      </div>
+                      <div class="cv-card-body">
+                        <h3 class="cv-card-title">Reliability</h3>
+                        <p class="cv-card-desc">Dependable commitments.</p>
+                      </div>
+                    </article>
+                  </div>
+
+                  <!-- 05 Partnership (Slowly Pulsing Accent Glow) -->
+                  <div class="cv-card-slot" style="--cv-idx: 4;">
+                    <article class="cv-card cv-card--partnership" style="--cv-idx: 4;">
+                      <div class="cv-card-top">
+                        <div class="cv-card-icon" style="--cv-idx: 4;" aria-hidden="true">
+                          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                          </svg>
+                        </div>
+                        <span class="cv-card-num">05</span>
+                      </div>
+                      <div class="cv-card-body">
+                        <h3 class="cv-card-title">Partnership</h3>
+                        <p class="cv-card-desc">Shared growth and respect.</p>
+                      </div>
+                    </article>
+                  </div>
+
+                  <!-- 06 Patient Focus -->
+                  <div class="cv-card-slot" style="--cv-idx: 5;">
+                    <article class="cv-card" style="--cv-idx: 5;">
+                      <div class="cv-card-top">
+                        <div class="cv-card-icon" style="--cv-idx: 5;" aria-hidden="true">
+                          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                            <path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/>
+                          </svg>
+                        </div>
+                        <span class="cv-card-num">06</span>
+                      </div>
+                      <div class="cv-card-body">
+                        <h3 class="cv-card-title">Patient Focus</h3>
+                        <p class="cv-card-desc">Care as our ultimate purpose.</p>
+                      </div>
+                    </article>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Bottom Full-Width Subtle Marquee Ticker -->
+            <div class="abt-ticker-strip cv-sans relative z-10 shrink-0 w-full border-t border-[#5eb2f6]/14 bg-[#041026]/35 py-3.5 overflow-hidden select-none">
+              <div class="abt-ticker-track items-center text-[12.5px] sm:text-[13.5px] font-bold uppercase tracking-[0.14em] text-[#5d82aa]/55">
+                <div class="flex items-center gap-7 sm:gap-9 pr-7 sm:pr-9">
+                  <span class="whitespace-nowrap">INTEGRITY</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span class="whitespace-nowrap">INNOVATION</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span class="whitespace-nowrap">EXCELLENCE</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span class="whitespace-nowrap">RELIABILITY</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span class="whitespace-nowrap">PARTNERSHIP</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span class="whitespace-nowrap">PATIENT FOCUS</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span class="whitespace-nowrap">INTEGRITY</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span class="whitespace-nowrap">INNOVATION</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span class="whitespace-nowrap">EXCELLENCE</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span class="whitespace-nowrap">RELIABILITY</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span class="whitespace-nowrap">PARTNERSHIP</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span class="whitespace-nowrap">PATIENT FOCUS</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                </div>
+                <div class="flex items-center gap-7 sm:gap-9 pr-7 sm:pr-9" aria-hidden="true">
+                  <span class="whitespace-nowrap">INTEGRITY</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span class="whitespace-nowrap">INNOVATION</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span class="whitespace-nowrap">EXCELLENCE</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span class="whitespace-nowrap">RELIABILITY</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span class="whitespace-nowrap">PARTNERSHIP</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span class="whitespace-nowrap">PATIENT FOCUS</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span class="whitespace-nowrap">INTEGRITY</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span class="whitespace-nowrap">INNOVATION</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span class="whitespace-nowrap">EXCELLENCE</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span class="whitespace-nowrap">RELIABILITY</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span class="whitespace-nowrap">PARTNERSHIP</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                  <span class="whitespace-nowrap">PATIENT FOCUS</span>
+                  <svg class="size-3 text-[#5eb2f6]/45 shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.1 5.9L16 8l-5.9 2.1L8 16l-2.1-5.9L0 8l5.9-2.1L8 0z"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===================================================================== -->
+          <!-- MAXIMIZED 4-COLUMN SHADCN UI FOOTER (MEDIQ BLUE PALETTE)              -->
+          <!-- ===================================================================== -->
+          <footer aria-label="About MediQ Footer" class="abt-subpage-panel is-hidden-subpage relative z-10 w-full flex flex-col justify-between border-t border-[#72c5f8]/20 bg-gradient-to-b from-[#0a1d40]/40 via-[#071633]/85 to-[#050f24]/95 backdrop-blur-md py-14 sm:py-16 lg:py-20">
+            <div class="mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16 flex flex-col justify-between gap-10">
+
+              <!-- Main 4-Column Footer Grid (components/ui/footer.tsx Architecture in MEDIQ Blue Palette) -->
+              <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-12 py-4">
+
+                <!-- Column 1: Company Info -->
+                <div class="flex flex-col items-start gap-4">
+                  <div class="flex items-center gap-3.5">
+                    <div class="h-11 w-11 rounded-full bg-[#0a1d40] border border-[#72c5f8]/45 flex items-center justify-center shadow-[0_0_20px_rgba(58,160,219,0.28)] shrink-0">
+                      <svg class="w-6 h-6 text-[#72c5f8]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <circle cx="12" cy="12" r="9" stroke-opacity="0.45" />
+                        <circle cx="12" cy="12" r="4.5" />
+                        <path d="M12 3v3M12 18v3M3 12h3M18 12h3" stroke-linecap="round" />
+                      </svg>
+                    </div>
+                    <div>
+                      <span class="text-lg font-bold text-white tracking-tight block leading-tight">MEDIQ Pharma and Medical Supplies Distribution</span>
+                      <span class="text-[10.5px] font-mono uppercase tracking-[0.14em] text-[#72c5f8]">Advancing Healthcare. Empowering Better Lives.</span>
+                    </div>
+                  </div>
+                  <p class="text-sm text-[#9bb3cf] leading-relaxed">
+                    Supporting Philippine healthcare professionals and institutions through responsible medical product distribution, product marketing, and commercial development, anchored by established expertise in ophthalmology.
+                  </p>
+                  <div class="pt-1 flex flex-wrap items-center gap-2 text-[11px] font-mono text-[#7aaee0]">
+                    <span class="px-2.5 py-1 rounded bg-[#0a1d40]/90 border border-[#72c5f8]/20">Healthcare Distribution</span>
+                    <span class="px-2.5 py-1 rounded bg-[#0a1d40]/90 border border-[#72c5f8]/20">Rayner UK Partner</span>
+                  </div>
+                </div>
+
+                <!-- Column 2: Useful Link -->
+                <div class="md:justify-self-center">
+                  <h3 class="mb-4 text-base font-semibold text-white tracking-wide">Useful Link</h3>
+                  <ul class="space-y-2.5">
+                    <li>
+                      <a href="#products" class="text-sm text-[#9bb3cf] transition-colors hover:text-[#72c5f8] flex items-center gap-2">
+                        <span class="size-1 rounded-full bg-[#3aa0db]"></span>
+                        <span>Products &amp; IOL Portfolio</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#brands" class="text-sm text-[#9bb3cf] transition-colors hover:text-[#72c5f8] flex items-center gap-2">
+                        <span class="size-1 rounded-full bg-[#3aa0db]"></span>
+                        <span>Brands &amp; Partners</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#news" class="text-sm text-[#9bb3cf] transition-colors hover:text-[#72c5f8] flex items-center gap-2">
+                        <span class="size-1 rounded-full bg-[#3aa0db]"></span>
+                        <span>Surgical Wet-Labs &amp; News</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#contact" class="text-sm text-[#9bb3cf] transition-colors hover:text-[#72c5f8] flex items-center gap-2">
+                        <span class="size-1 rounded-full bg-[#3aa0db]"></span>
+                        <span>Contact Us</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#contact" class="text-sm text-[#9bb3cf] transition-colors hover:text-[#72c5f8] flex items-center gap-2">
+                        <span class="size-1 rounded-full bg-[#3aa0db]"></span>
+                        <span>Privacy Policy</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Column 3: Follow Us -->
+                <div class="md:justify-self-center">
+                  <h3 class="mb-4 text-base font-semibold text-white tracking-wide">Follow Us</h3>
+                  <ul class="space-y-3">
+                    <li>
+                      <a href="https://m.me/mediqpharma" target="_blank" rel="noopener" aria-label="Facebook" class="group flex items-center gap-2.5 text-sm text-[#9bb3cf] transition-colors hover:text-[#72c5f8]">
+                        <span class="flex h-8 w-8 items-center justify-center rounded-full border border-[#72c5f8]/25 bg-[#0a1d40]/80 text-[#72c5f8] group-hover:border-[#72c5f8] group-hover:bg-[#3aa0db]/20 transition-colors">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </span>
+                        <span>Facebook</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#contact" aria-label="Instagram" class="group flex items-center gap-2.5 text-sm text-[#9bb3cf] transition-colors hover:text-[#72c5f8]">
+                        <span class="flex h-8 w-8 items-center justify-center rounded-full border border-[#72c5f8]/25 bg-[#0a1d40]/80 text-[#72c5f8] group-hover:border-[#72c5f8] group-hover:bg-[#3aa0db]/20 transition-colors">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        </span>
+                        <span>Instagram</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#contact" aria-label="Twitter (X)" class="group flex items-center gap-2.5 text-sm text-[#9bb3cf] transition-colors hover:text-[#72c5f8]">
+                        <span class="flex h-8 w-8 items-center justify-center rounded-full border border-[#72c5f8]/25 bg-[#0a1d40]/80 text-[#72c5f8] group-hover:border-[#72c5f8] group-hover:bg-[#3aa0db]/20 transition-colors">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                        </span>
+                        <span>Twitter (X)</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Column 4: Newsletter Subscription -->
+                <div>
+                  <h3 class="mb-4 text-base font-semibold text-white tracking-wide">Subscribe our newsletter</h3>
+                  <p class="mb-3.5 text-xs text-[#9bb3cf] leading-relaxed">
+                    Receive clinical monographs, RayOne&reg; Galaxy surgical updates, and Philippine wet-lab invitations.
+                  </p>
+                  <form
+                    onsubmit="if(window.handleMediqNewsletterSubmit){return window.handleMediqNewsletterSubmit(event, this);} event.preventDefault(); return false;"
+                    class="relative w-full max-w-sm"
+                  >
+                    <div class="relative">
+                      <input
+                        type="email"
+                        placeholder="Your email address"
+                        required
+                        aria-label="Email for newsletter"
+                        class="flex h-11 w-full rounded-md border border-[#679cd0]/40 bg-[#06132c]/90 px-3.5 py-2 pr-28 text-sm text-white placeholder:text-[#7aaee0]/60 focus:border-[#72c5f8] focus:outline-none focus:ring-2 focus:ring-[#72c5f8]/35 disabled:cursor-not-allowed disabled:opacity-50"
+                      />
+                      <button
+                        type="submit"
+                        data-nl-btn
+                        class="absolute right-0 top-0 h-full rounded-r-md rounded-l-none bg-[#3aa0db] hover:bg-[#72c5f8] px-4 text-sm font-semibold text-[#06132c] transition-colors cursor-pointer"
+                      >
+                        Subscribe
+                      </button>
+                    </div>
+                    <!-- Subscription Status Overlay -->
+                    <div
+                      data-nl-overlay
+                      class="pointer-events-none opacity-0 transition-opacity duration-300 absolute inset-0 flex items-center justify-center rounded-md bg-[#06132c]/92 text-center backdrop-blur-sm border border-[#72c5f8]/40"
+                    >
+                      <span data-nl-msg class="font-semibold text-[#72c5f8]">Subscribed! 🎉</span>
+                    </div>
+                  </form>
+                </div>
+
+              </div>
+
+              <!-- 3. Bottom Copyright & Regulatory Compliance Bar -->
+              <div class="pt-8 border-t border-[#72c5f8]/15 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#7aaee0]">
+                <div>
+                  &copy; 2026 MediQ Pharma &amp; Medical Supplies Distribution Inc. Exclusive Philippine Partner of Rayner (UK). All rights reserved.
+                </div>
+                <div class="flex flex-wrap items-center gap-5 font-mono text-[11px] text-[#9bb3cf]">
+                  <span>FDA LTO &amp; CDRR Accredited</span>
+                  <span class="text-[#72c5f8]/40">&bull;</span>
+                  <span>GDP Cold-Chain Certified</span>
+                  <span class="text-[#72c5f8]/40">&bull;</span>
+                  <span>Metro Manila, PH</span>
+                </div>
+              </div>
+
+            </div>
+          </footer>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
